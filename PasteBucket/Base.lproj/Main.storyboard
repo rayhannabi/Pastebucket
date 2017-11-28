@@ -9,6 +9,12 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Avenir.ttc">
+            <string>Avenir-Black</string>
+            <string>Avenir-Book</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--LoginVC-->
         <scene sceneID="tne-QT-ifu">
@@ -17,12 +23,86 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="bMz-HN-DaX">
+                                <rect key="frame" x="90.5" y="80" width="194.5" height="38.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PASTE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JOK-q3-VsD">
+                                        <rect key="frame" x="0.0" y="0.0" width="86.5" height="38.5"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="28"/>
+                                        <color key="textColor" red="0.0" green="0.56904578210000001" blue="0.57461684940000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BUCKET" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0sU-ER-Ira">
+                                        <rect key="frame" x="87.5" y="0.0" width="107" height="38.5"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="28"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Log in to your Pastebin account" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="101-Er-6zY">
+                                <rect key="frame" x="67" y="184" width="241" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MNY-cc-9e1">
+                                <rect key="frame" x="45" y="220" width="285" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="11" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5lz-Ru-HkR">
+                                <rect key="frame" x="30" y="590" width="315" height="47"/>
+                                <string key="text">Note: If you created your Pastebin account using Google, Facebook or Twitter account, please login to your account using a browser, then set a password.</string>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="13"/>
+                                <color key="textColor" name="systemGrayColor" catalog="System" colorSpace="catalog"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v0f-Yg-DAQ" customClass="RoundedButton" customModule="PasteBucket" customModuleProvider="target">
+                                <rect key="frame" x="80" y="313" width="215" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="3x6-zr-DdU"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="LOG IN">
+                                    <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lGv-bu-hJo">
+                                <rect key="frame" x="45" y="258" width="285" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                            </textField>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="tintColor" red="0.0" green="0.56904578210000001" blue="0.57461684940000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="5lz-Ru-HkR" secondAttribute="trailing" constant="30" id="9vM-O3-vhi"/>
+                            <constraint firstItem="101-Er-6zY" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="EvJ-5D-oub"/>
+                            <constraint firstItem="bMz-HN-DaX" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Iz6-E5-2Nt"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="v0f-Yg-DAQ" secondAttribute="trailing" constant="80" id="PIs-Jv-NNQ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="MNY-cc-9e1" secondAttribute="trailing" constant="45" id="SxK-i6-SEU"/>
+                            <constraint firstItem="5lz-Ru-HkR" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="T30-CD-oUv"/>
+                            <constraint firstItem="bMz-HN-DaX" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="60" id="aV2-Zv-Fln"/>
+                            <constraint firstItem="MNY-cc-9e1" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="asw-w2-7eF"/>
+                            <constraint firstItem="lGv-bu-hJo" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="b1G-I9-j9w"/>
+                            <constraint firstItem="101-Er-6zY" firstAttribute="top" secondItem="bMz-HN-DaX" secondAttribute="bottom" constant="65" id="e0d-QK-8oG"/>
+                            <constraint firstItem="MNY-cc-9e1" firstAttribute="top" secondItem="101-Er-6zY" secondAttribute="bottom" constant="15" id="iLN-80-0O3"/>
+                            <constraint firstItem="lGv-bu-hJo" firstAttribute="top" secondItem="MNY-cc-9e1" secondAttribute="bottom" constant="8" id="l8K-Wh-z5t"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="5lz-Ru-HkR" secondAttribute="bottom" constant="30" id="obV-8m-sJi"/>
+                            <constraint firstItem="v0f-Yg-DAQ" firstAttribute="top" secondItem="lGv-bu-hJo" secondAttribute="bottom" constant="25" id="qfc-H9-WJg"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="lGv-bu-hJo" secondAttribute="trailing" constant="45" id="voa-BG-hoV"/>
+                            <constraint firstItem="v0f-Yg-DAQ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="xfd-np-uNS"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="32.799999999999997" y="32.833583208395808"/>
         </scene>
     </scenes>
 </document>
