@@ -30,7 +30,7 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PASTE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JOK-q3-VsD">
                                         <rect key="frame" x="0.0" y="0.0" width="86.5" height="38.5"/>
                                         <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="28"/>
-                                        <color key="textColor" red="0.0" green="0.56904578210000001" blue="0.57461684940000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="textColor" red="0.0" green="0.32852089410000002" blue="0.57488495110000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BUCKET" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0sU-ER-Ira">
@@ -69,6 +69,9 @@
                                 <state key="normal" title="LOG IN">
                                     <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <segue destination="PGB-g8-Ift" kind="show" id="Qn9-a6-wth"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lGv-bu-hJo">
                                 <rect key="frame" x="45" y="258" width="285" height="30"/>
@@ -78,7 +81,7 @@
                             </textField>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <color key="tintColor" red="0.0" green="0.56904578210000001" blue="0.57461684940000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="tintColor" red="0.0" green="0.32852089410000002" blue="0.57488495110000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="5lz-Ru-HkR" secondAttribute="trailing" constant="30" id="9vM-O3-vhi"/>
                             <constraint firstItem="101-Er-6zY" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="EvJ-5D-oub"/>
@@ -104,5 +107,142 @@
             </objects>
             <point key="canvasLocation" x="32.799999999999997" y="32.833583208395808"/>
         </scene>
+        <!--Profile-->
+        <scene sceneID="SLf-t4-VgO">
+            <objects>
+                <viewController id="PtX-WJ-BBp" customClass="ProfileVC" customModule="PasteBucket" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="CCL-Ny-IbG">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Pq-dO-ezX">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="75"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="3eb-Cd-yXS">
+                                        <rect key="frame" x="118" y="39" width="139.5" height="27.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PASTE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="36n-pP-7kl">
+                                                <rect key="frame" x="0.0" y="0.0" width="62" height="27.5"/>
+                                                <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="20"/>
+                                                <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BUCKET" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nrL-KT-PsI">
+                                                <rect key="frame" x="63" y="0.0" width="76.5" height="27.5"/>
+                                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="20"/>
+                                                <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.0" green="0.32852089410000002" blue="0.57488495110000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="3eb-Cd-yXS" secondAttribute="bottom" constant="8" id="TYt-5c-f8S"/>
+                                    <constraint firstItem="3eb-Cd-yXS" firstAttribute="centerX" secondItem="0Pq-dO-ezX" secondAttribute="centerX" id="lO7-i3-WGx"/>
+                                    <constraint firstAttribute="height" constant="75" id="xs0-V2-EZC"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="0Pq-dO-ezX" firstAttribute="top" secondItem="CCL-Ny-IbG" secondAttribute="top" id="2Tf-Sc-bDt"/>
+                            <constraint firstItem="0Pq-dO-ezX" firstAttribute="leading" secondItem="aEe-7z-AYZ" secondAttribute="leading" id="LBt-mS-KyB"/>
+                            <constraint firstItem="0Pq-dO-ezX" firstAttribute="trailing" secondItem="aEe-7z-AYZ" secondAttribute="trailing" id="yyO-Bz-nYZ"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="aEe-7z-AYZ"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Profile" image="profile" landscapeImage="profile" id="vqB-d2-UaU">
+                        <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="-3"/>
+                    </tabBarItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8lw-Sd-qih" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1705" y="365"/>
+        </scene>
+        <!--Pastes-->
+        <scene sceneID="Eun-DU-eU2">
+            <objects>
+                <viewController id="Mv1-ko-P5a" customClass="PastesVC" customModule="PasteBucket" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="CXW-9l-fj8">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pnP-AU-JWE">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="75"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="40Y-YR-25A">
+                                        <rect key="frame" x="118" y="39" width="139.5" height="27.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PASTE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c89-OU-U7w">
+                                                <rect key="frame" x="0.0" y="0.0" width="62" height="27.5"/>
+                                                <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="20"/>
+                                                <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BUCKET" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xLm-B0-GzU">
+                                                <rect key="frame" x="63" y="0.0" width="76.5" height="27.5"/>
+                                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="20"/>
+                                                <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YxG-Ec-6nv">
+                                        <rect key="frame" x="338" y="40.5" width="25" height="24"/>
+                                        <state key="normal" image="compose"/>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.0" green="0.32852089410000002" blue="0.57488495110000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="75" id="0Iu-Na-gvV"/>
+                                    <constraint firstAttribute="trailing" secondItem="YxG-Ec-6nv" secondAttribute="trailing" constant="12" id="EdZ-Nb-0LW"/>
+                                    <constraint firstAttribute="bottom" secondItem="40Y-YR-25A" secondAttribute="bottom" constant="8" id="P7N-gG-Pgc"/>
+                                    <constraint firstItem="YxG-Ec-6nv" firstAttribute="centerY" secondItem="40Y-YR-25A" secondAttribute="centerY" id="nUj-ke-cef"/>
+                                    <constraint firstItem="40Y-YR-25A" firstAttribute="centerX" secondItem="pnP-AU-JWE" secondAttribute="centerX" id="z6O-lO-g4i"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="pnP-AU-JWE" firstAttribute="trailing" secondItem="mH1-Qn-AzP" secondAttribute="trailing" id="Mid-4p-Rr2"/>
+                            <constraint firstItem="pnP-AU-JWE" firstAttribute="leading" secondItem="mH1-Qn-AzP" secondAttribute="leading" id="VHz-nE-ksX"/>
+                            <constraint firstItem="pnP-AU-JWE" firstAttribute="top" secondItem="CXW-9l-fj8" secondAttribute="top" id="zEd-ZH-pKH"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="mH1-Qn-AzP"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Pastes" image="paste" id="NeQ-Fl-eHC">
+                        <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="-3"/>
+                    </tabBarItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aw3-We-rML" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1704.8" y="-300"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="yDV-k2-H6v">
+            <objects>
+                <tabBarController id="PGB-g8-Ift" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="jlm-Ra-tFE">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" red="0.0" green="0.32852089410000002" blue="0.57488495110000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="selectedImageTintColor" red="0.0" green="0.32852089410000002" blue="0.57488495110000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="Mv1-ko-P5a" kind="relationship" relationship="viewControllers" id="kYN-8S-PBI"/>
+                        <segue destination="PtX-WJ-BBp" kind="relationship" relationship="viewControllers" id="TZd-IJ-Gko"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="M4W-NO-l99" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="753" y="32"/>
+        </scene>
     </scenes>
+    <resources>
+        <image name="compose" width="25" height="24"/>
+        <image name="paste" width="25" height="25"/>
+        <image name="profile" width="25" height="25"/>
+    </resources>
 </document>

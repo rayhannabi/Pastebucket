@@ -13,6 +13,8 @@
 		E85E1DBE1FCD7E5B00CC72E1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E85E1DBD1FCD7E5B00CC72E1 /* Assets.xcassets */; };
 		E85E1DC11FCD7E5B00CC72E1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E85E1DBF1FCD7E5B00CC72E1 /* LaunchScreen.storyboard */; };
 		E85E1DCC1FCD887100CC72E1 /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E85E1DCB1FCD887100CC72E1 /* RoundedButton.swift */; };
+		E85E1DCE1FCDE1EC00CC72E1 /* PastesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E85E1DCD1FCDE1EC00CC72E1 /* PastesVC.swift */; };
+		E85E1DD01FCDE25900CC72E1 /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E85E1DCF1FCDE25900CC72E1 /* ProfileVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		E85E1DC01FCD7E5B00CC72E1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E85E1DC21FCD7E5B00CC72E1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E85E1DCB1FCD887100CC72E1 /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
+		E85E1DCD1FCDE1EC00CC72E1 /* PastesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PastesVC.swift; sourceTree = "<group>"; };
+		E85E1DCF1FCDE25900CC72E1 /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +91,8 @@
 			isa = PBXGroup;
 			children = (
 				E85E1DB81FCD7E5B00CC72E1 /* LoginVC.swift */,
+				E85E1DCD1FCDE1EC00CC72E1 /* PastesVC.swift */,
+				E85E1DCF1FCDE25900CC72E1 /* ProfileVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -163,8 +169,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E85E1DD01FCDE25900CC72E1 /* ProfileVC.swift in Sources */,
 				E85E1DB91FCD7E5B00CC72E1 /* LoginVC.swift in Sources */,
 				E85E1DCC1FCD887100CC72E1 /* RoundedButton.swift in Sources */,
+				E85E1DCE1FCDE1EC00CC72E1 /* PastesVC.swift in Sources */,
 				E85E1DB71FCD7E5B00CC72E1 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
