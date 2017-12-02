@@ -1,5 +1,5 @@
 //
-//  PastesVC.swift
+//  CreatePasteVC.swift
 //  PasteBucket
 //
 //  Created by Rayhan Janam on 11/29/17.
@@ -8,11 +8,10 @@
 
 import UIKit
 
-class PastesVC: UIViewController {
+class CreatePasteVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
+
 }
