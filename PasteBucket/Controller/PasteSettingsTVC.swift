@@ -24,7 +24,7 @@ class PasteSettingsTVC: UITableViewController, UIPickerViewDelegate, UIPickerVie
             e.append(time.key)
         }
         
-        return e
+        return e.sorted()
     }
     
     var exposurePickerData: [String] {
@@ -34,21 +34,53 @@ class PasteSettingsTVC: UITableViewController, UIPickerViewDelegate, UIPickerVie
             e.append(exposure.key)
         }
         
-        return e
+        return e.sorted()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let toolbar = UIToolbar(frame: CGRect(x: 0,
+                                              y: self.view.frame.size.height / 6,
+                                              width: self.view.frame.size.width,
+                                              height: 44.0))
+        toolbar.layer.position = CGPoint(x: self.view.frame.size.width / 2,
+                                         y: self.view.frame.size.height - 20.0)
+        toolbar.barStyle = .default
+        toolbar.tintColor = #colorLiteral(red: 0, green: 0.3285208941, blue: 0.5748849511, alpha: 1)
+        toolbar.barTintColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        
+        let flexspace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace,
+                                        target: self, action: nil)
+        let doneButton = UIBarButtonItem(barButtonSystemItem: .done,
+                                         target: self, action: #selector(donePressed))
+        toolbar.setItems([flexspace, doneButton], animated: true)
+        
         let expirePickerView = UIPickerView()
+        expirePickerView.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         expirePickerView.delegate = self
         expirePickerView.tag = 1
         expireField.inputView = expirePickerView
+        expireField.inputAccessoryView = toolbar
         
         let exposurePickerView = UIPickerView()
+        exposurePickerView.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         exposurePickerView.delegate = self
         exposurePickerView.tag = 2
         exposureField.inputView = exposurePickerView
+        exposureField.inputAccessoryView = toolbar
+        
+        titleField.inputAccessoryView = toolbar
+    }
+    
+    @objc func donePressed(sender: UIBarButtonItem) {
+        if expireField.isFirstResponder {
+            expireField.resignFirstResponder()
+        } else if exposureField.isFirstResponder {
+            exposureField.resignFirstResponder()
+        } else if titleField.isFirstResponder {
+            titleField.resignFirstResponder()
+        }
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
