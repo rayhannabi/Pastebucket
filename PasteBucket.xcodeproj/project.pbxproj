@@ -19,8 +19,8 @@
 		E88FECCE1FD1D62400B20A02 /* PasteSyntax.swift in Sources */ = {isa = PBXBuildFile; fileRef = E88FECCD1FD1D62400B20A02 /* PasteSyntax.swift */; };
 		E88FECD21FD1DC9700B20A02 /* Paste.swift in Sources */ = {isa = PBXBuildFile; fileRef = E88FECD11FD1DC9700B20A02 /* Paste.swift */; };
 		E88FECD41FD2104E00B20A02 /* PasteSyntaxTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E88FECD31FD2104E00B20A02 /* PasteSyntaxTVC.swift */; };
-		E8EF20881FD3110F00F66E38 /* PasteSettingsTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8EF20871FD3110F00F66E38 /* PasteSettingsTVC.swift */; };
-		E8EF208A1FD314D500F66E38 /* PasteSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8EF20891FD314D500F66E38 /* PasteSettings.swift */; };
+		E8EF20881FD3110F00F66E38 /* PasteOptionsTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8EF20871FD3110F00F66E38 /* PasteOptionsTVC.swift */; };
+		E8EF208A1FD314D500F66E38 /* PasteOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8EF20891FD314D500F66E38 /* PasteOptions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,8 +38,8 @@
 		E88FECCD1FD1D62400B20A02 /* PasteSyntax.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasteSyntax.swift; sourceTree = "<group>"; };
 		E88FECD11FD1DC9700B20A02 /* Paste.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Paste.swift; sourceTree = "<group>"; };
 		E88FECD31FD2104E00B20A02 /* PasteSyntaxTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasteSyntaxTVC.swift; sourceTree = "<group>"; };
-		E8EF20871FD3110F00F66E38 /* PasteSettingsTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasteSettingsTVC.swift; sourceTree = "<group>"; };
-		E8EF20891FD314D500F66E38 /* PasteSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasteSettings.swift; sourceTree = "<group>"; };
+		E8EF20871FD3110F00F66E38 /* PasteOptionsTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasteOptionsTVC.swift; sourceTree = "<group>"; };
+		E8EF20891FD314D500F66E38 /* PasteOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasteOptions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,7 +89,7 @@
 			children = (
 				E88FECCD1FD1D62400B20A02 /* PasteSyntax.swift */,
 				E88FECD11FD1DC9700B20A02 /* Paste.swift */,
-				E8EF20891FD314D500F66E38 /* PasteSettings.swift */,
+				E8EF20891FD314D500F66E38 /* PasteOptions.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -110,7 +110,7 @@
 				E85E1DCF1FCDE25900CC72E1 /* ProfileVC.swift */,
 				E85E1DD11FCDF01E00CC72E1 /* CreatePasteVC.swift */,
 				E88FECD31FD2104E00B20A02 /* PasteSyntaxTVC.swift */,
-				E8EF20871FD3110F00F66E38 /* PasteSettingsTVC.swift */,
+				E8EF20871FD3110F00F66E38 /* PasteOptionsTVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -189,14 +189,14 @@
 			files = (
 				E85E1DD01FCDE25900CC72E1 /* ProfileVC.swift in Sources */,
 				E85E1DB91FCD7E5B00CC72E1 /* LoginVC.swift in Sources */,
-				E8EF208A1FD314D500F66E38 /* PasteSettings.swift in Sources */,
+				E8EF208A1FD314D500F66E38 /* PasteOptions.swift in Sources */,
 				E85E1DD21FCDF01E00CC72E1 /* CreatePasteVC.swift in Sources */,
 				E88FECD41FD2104E00B20A02 /* PasteSyntaxTVC.swift in Sources */,
 				E85E1DCC1FCD887100CC72E1 /* RoundedButton.swift in Sources */,
 				E85E1DCE1FCDE1EC00CC72E1 /* PastesVC.swift in Sources */,
 				E88FECCE1FD1D62400B20A02 /* PasteSyntax.swift in Sources */,
 				E85E1DB71FCD7E5B00CC72E1 /* AppDelegate.swift in Sources */,
-				E8EF20881FD3110F00F66E38 /* PasteSettingsTVC.swift in Sources */,
+				E8EF20881FD3110F00F66E38 /* PasteOptionsTVC.swift in Sources */,
 				E88FECD21FD1DC9700B20A02 /* Paste.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

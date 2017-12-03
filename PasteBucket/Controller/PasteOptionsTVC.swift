@@ -8,14 +8,14 @@
 
 import UIKit
 
-class PasteSettingsTVC: UITableViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+class PasteOptionsTVC: UITableViewController, UIPickerViewDelegate, UIPickerViewDataSource {
 
     @IBOutlet weak var titleField: UITextField!
     @IBOutlet weak var expireField: UITextField!
     @IBOutlet weak var exposureField: UITextField!
     
-    let expireData = PasteSettings.pasteExpires
-    let exposureData = PasteSettings.pasteExposure
+    let expireData = PasteOptions.pasteExpires
+    let exposureData = PasteOptions.pasteExposure
     
     var expirePickerData: [String] {
         var e: [String] = Array()
@@ -114,6 +114,13 @@ class PasteSettingsTVC: UITableViewController, UIPickerViewDelegate, UIPickerVie
             exposureField.text = exposurePickerData[row]
         }
     }
+    
+    @IBAction func createPastePressed(_ sender: Any) {
+        // TODO
+        
+        dismiss(animated: true, completion: nil)
+    }
+    
     
 }
 

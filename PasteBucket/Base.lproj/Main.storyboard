@@ -168,7 +168,60 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8lw-Sd-qih" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1705" y="365"/>
+            <point key="canvasLocation" x="753" y="786"/>
+        </scene>
+        <!--Trending-->
+        <scene sceneID="RNv-nu-g0g">
+            <objects>
+                <viewController id="WfM-Jh-wV0" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="gqP-yq-oCB">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lTJ-GZ-FDO">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="75"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="DF6-fZ-29x">
+                                        <rect key="frame" x="118.5" y="39" width="139.5" height="27.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PASTE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ybs-Dt-Puy">
+                                                <rect key="frame" x="0.0" y="0.0" width="62" height="27.5"/>
+                                                <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="20"/>
+                                                <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BUCKET" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rmq-Ai-mRa">
+                                                <rect key="frame" x="63" y="0.0" width="76.5" height="27.5"/>
+                                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="20"/>
+                                                <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.0" green="0.32852089410000002" blue="0.57488495110000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="DF6-fZ-29x" secondAttribute="bottom" constant="8" id="eyZ-WW-sjc"/>
+                                    <constraint firstItem="DF6-fZ-29x" firstAttribute="centerX" secondItem="lTJ-GZ-FDO" secondAttribute="centerX" id="m0U-cU-3dR"/>
+                                    <constraint firstAttribute="height" constant="75" id="qd1-Xq-nfs"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="lTJ-GZ-FDO" firstAttribute="trailing" secondItem="m0M-8W-N1J" secondAttribute="trailing" id="Jol-3D-6bd"/>
+                            <constraint firstItem="lTJ-GZ-FDO" firstAttribute="top" secondItem="gqP-yq-oCB" secondAttribute="top" id="p7D-il-JiJ"/>
+                            <constraint firstItem="lTJ-GZ-FDO" firstAttribute="leading" secondItem="m0M-8W-N1J" secondAttribute="leading" id="yjs-Gd-z2j"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="m0M-8W-N1J"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Trending" image="trending" id="G2I-1l-WLJ">
+                        <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="-3"/>
+                    </tabBarItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wZ6-af-J3J" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1705" y="512"/>
         </scene>
         <!--My Pastes-->
         <scene sceneID="Eun-DU-eU2">
@@ -289,17 +342,17 @@
             </objects>
             <point key="canvasLocation" x="3286" y="-300"/>
         </scene>
-        <!--Paste Settings-->
+        <!--Paste Options-->
         <scene sceneID="P25-nT-GWa">
             <objects>
-                <tableViewController title="Paste Settings" id="oIt-dt-ZfR" customClass="PasteSettingsTVC" customModule="PasteBucket" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController title="Paste Options" id="oIt-dt-ZfR" customClass="PasteOptionsTVC" customModule="PasteBucket" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" allowsSelection="NO" rowHeight="44" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="7cr-e1-VTM">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="551"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <color key="tintColor" red="0.0" green="0.32852089410000002" blue="0.57488495110000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <sections>
-                            <tableViewSection headerTitle="Edit your paste settings" id="1jI-re-Z8j">
+                            <tableViewSection headerTitle="Edit your paste options" footerTitle="If no option is set, default options will be used to create new paste" id="1jI-re-Z8j">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="cY0-Hq-I5a">
                                         <rect key="frame" x="0.0" y="55.5" width="375" height="44"/>
@@ -396,6 +449,32 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
+                            <tableViewSection id="jaQ-r7-JQP">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" tag="10" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="gray" indentationWidth="10" id="GzJ-zj-9Jj">
+                                        <rect key="frame" x="0.0" y="251.5" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="GzJ-zj-9Jj" id="aFL-2B-kN0">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xRV-qj-uwq">
+                                                    <rect key="frame" x="113" y="7" width="148" height="30"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                                    <state key="normal" title="CREATE NEW PASTE"/>
+                                                    <connections>
+                                                        <action selector="createPastePressed:" destination="oIt-dt-ZfR" eventType="touchUpInside" id="ly3-jU-Lpf"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="xRV-qj-uwq" firstAttribute="centerX" secondItem="aFL-2B-kN0" secondAttribute="centerX" id="C36-lo-Q2p"/>
+                                                <constraint firstItem="xRV-qj-uwq" firstAttribute="centerY" secondItem="aFL-2B-kN0" secondAttribute="centerY" id="xML-wm-opL"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
                         </sections>
                         <connections>
                             <outlet property="dataSource" destination="oIt-dt-ZfR" id="HG9-9a-Smm"/>
@@ -462,6 +541,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="Mv1-ko-P5a" kind="relationship" relationship="viewControllers" id="kYN-8S-PBI"/>
+                        <segue destination="WfM-Jh-wV0" kind="relationship" relationship="viewControllers" id="Jb2-k6-ehy"/>
                         <segue destination="PtX-WJ-BBp" kind="relationship" relationship="viewControllers" id="TZd-IJ-Gko"/>
                     </connections>
                 </tabBarController>
@@ -500,5 +580,6 @@
         <image name="compose" width="25" height="24"/>
         <image name="paste" width="25" height="25"/>
         <image name="profile" width="25" height="25"/>
+        <image name="trending" width="15" height="21"/>
     </resources>
 </document>

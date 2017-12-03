@@ -8,7 +8,7 @@
 
 import Foundation
 
-class PasteSettings {
+class PasteOptions {
     public static let pasteExpires: [String: String] = [
         "Never" : "N",
         "10 Minutes" : "10M",
