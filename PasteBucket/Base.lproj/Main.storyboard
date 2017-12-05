@@ -293,45 +293,6 @@
             </objects>
             <point key="canvasLocation" x="1092" y="750.67466266866575"/>
         </scene>
-        <!--TrendingVC-->
-        <scene sceneID="RNv-nu-g0g">
-            <objects>
-                <viewController id="WfM-Jh-wV0" customClass="TrendingVC" customModule="PasteBucket" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="gqP-yq-oCB">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="m0M-8W-N1J"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="BmZ-VH-fl9"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="wZ6-af-J3J" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2769" y="510"/>
-        </scene>
-        <!--PastesVC-->
-        <scene sceneID="Eun-DU-eU2">
-            <objects>
-                <viewController id="Mv1-ko-P5a" customClass="PastesVC" customModule="PasteBucket" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="CXW-9l-fj8">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="mH1-Qn-AzP"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="QXj-Oc-yzI">
-                        <barButtonItem key="rightBarButtonItem" springLoaded="YES" systemItem="compose" id="j4V-Jv-kdp">
-                            <color key="tintColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            <connections>
-                                <segue destination="yBG-Bj-JCn" kind="presentation" id="pr6-MD-CLq"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="aw3-We-rML" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2044" y="-300"/>
-        </scene>
         <!--New Paste-->
         <scene sceneID="8MP-Mq-9Wr">
             <objects>
@@ -341,36 +302,31 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="I5X-Rf-TUo">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="507"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="551"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <mutableString key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</mutableString>
                                 <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="13"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no"/>
                             </textView>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xUb-y2-Xqi">
-                                <rect key="frame" x="0.0" y="507" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                                <items>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="Jsh-3k-hbf"/>
-                                    <barButtonItem title="Syntax" id="leP-fc-lDz">
-                                        <connections>
-                                            <segue destination="aAp-HE-KYF" kind="show" id="vvf-1k-GIG"/>
-                                        </connections>
-                                    </barButtonItem>
-                                </items>
-                            </toolbar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="tintColor" red="0.0" green="0.32852089410000002" blue="0.57488495110000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="I5X-Rf-TUo" firstAttribute="top" secondItem="0Cz-ln-IpC" secondAttribute="top" id="Knp-kk-WlM"/>
-                            <constraint firstItem="I5X-Rf-TUo" firstAttribute="bottom" secondItem="0Cz-ln-IpC" secondAttribute="bottom" id="R7U-fY-sAp"/>
-                            <constraint firstItem="I5X-Rf-TUo" firstAttribute="leading" secondItem="0Cz-ln-IpC" secondAttribute="leading" id="rf8-AK-JVH"/>
-                            <constraint firstItem="I5X-Rf-TUo" firstAttribute="trailing" secondItem="0Cz-ln-IpC" secondAttribute="trailing" id="zmy-qO-24f"/>
+                            <constraint firstAttribute="bottom" secondItem="I5X-Rf-TUo" secondAttribute="bottom" id="Cjh-bG-c6h"/>
+                            <constraint firstItem="I5X-Rf-TUo" firstAttribute="trailing" secondItem="0Cz-ln-IpC" secondAttribute="trailing" id="H0d-fd-sHW"/>
+                            <constraint firstItem="I5X-Rf-TUo" firstAttribute="leading" secondItem="0Cz-ln-IpC" secondAttribute="leading" id="Hai-D0-Dr6"/>
+                            <constraint firstItem="I5X-Rf-TUo" firstAttribute="top" secondItem="0Cz-ln-IpC" secondAttribute="top" id="kli-93-Je8"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="0Cz-ln-IpC"/>
                     </view>
-                    <toolbarItems/>
+                    <toolbarItems>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="uhe-QX-MUL"/>
+                        <barButtonItem image="coding" style="plain" id="0Od-7y-GOV">
+                            <connections>
+                                <segue destination="aAp-HE-KYF" kind="show" id="Ikm-H7-tGZ"/>
+                            </connections>
+                        </barButtonItem>
+                    </toolbarItems>
                     <navigationItem key="navigationItem" title="New Paste" id="xfd-NL-8HB">
                         <barButtonItem key="backBarButtonItem" title="Back" id="zca-Uk-vLI"/>
                         <barButtonItem key="leftBarButtonItem" title="Cancel" id="ew6-GJ-lek">
@@ -395,7 +351,7 @@
         <!--Paste Options-->
         <scene sceneID="P25-nT-GWa">
             <objects>
-                <tableViewController title="Paste Options" id="oIt-dt-ZfR" customClass="PasteOptionsTVC" customModule="PasteBucket" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController title="Paste Options" hidesBottomBarWhenPushed="YES" id="oIt-dt-ZfR" customClass="PasteOptionsTVC" customModule="PasteBucket" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" allowsSelection="NO" rowHeight="44" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="7cr-e1-VTM">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="551"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -599,10 +555,47 @@
             </objects>
             <point key="canvasLocation" x="111" y="-300"/>
         </scene>
+        <!--PastesTVC-->
+        <scene sceneID="iWq-Na-e4y">
+            <objects>
+                <tableViewController id="nRr-4D-cBy" customClass="PastesTVC" customModule="PasteBucket" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="D33-4g-9ss">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PasteCell" id="68B-ug-cgy">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="68B-ug-cgy" id="eAq-Wv-agp">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <sections/>
+                        <connections>
+                            <outlet property="dataSource" destination="nRr-4D-cBy" id="Dwr-Gb-vMW"/>
+                            <outlet property="delegate" destination="nRr-4D-cBy" id="fRh-M0-8wg"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="0bf-1R-bJH">
+                        <barButtonItem key="rightBarButtonItem" systemItem="compose" id="aST-Gh-z1c">
+                            <color key="tintColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <segue destination="yBG-Bj-JCn" kind="show" id="p17-il-LOm"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="brt-Id-NBj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1954" y="-300"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="jc5-b0-1Ji">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="yBG-Bj-JCn" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" toolbarHidden="NO" id="yBG-Bj-JCn" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" largeTitles="YES" id="dXi-Ml-9gj">
                         <rect key="frame" x="0.0" y="20" width="375" height="96"/>
@@ -617,6 +610,10 @@
                         </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ps0-4o-9XX">
+                        <rect key="frame" x="0.0" y="574" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
                     <connections>
                         <segue destination="JLQ-dD-B1a" kind="relationship" relationship="rootViewController" id="7qh-gL-FCu"/>
                     </connections>
@@ -674,7 +671,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="Mv1-ko-P5a" kind="relationship" relationship="rootViewController" id="yMc-eN-zUX"/>
+                        <segue destination="nRr-4D-cBy" kind="relationship" relationship="rootViewController" id="7Lf-2Y-D0k"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zSY-4r-IOf" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -696,15 +693,45 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="WfM-Jh-wV0" kind="relationship" relationship="rootViewController" id="MkW-q5-yXI"/>
+                        <segue destination="akm-hD-gL8" kind="relationship" relationship="rootViewController" id="Dtq-Pq-dIn"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pbz-GG-DTq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2043.2" y="510.94452773613199"/>
         </scene>
+        <!--TrendingTVC-->
+        <scene sceneID="15M-ID-z8F">
+            <objects>
+                <tableViewController id="akm-hD-gL8" customClass="TrendingTVC" customModule="PasteBucket" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="VTV-4Q-4qA">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TrendingCell" id="FgV-XM-KLT">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="FgV-XM-KLT" id="R2w-Mn-hLF">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="akm-hD-gL8" id="wxp-hD-3MJ"/>
+                            <outlet property="delegate" destination="akm-hD-gL8" id="4DT-ba-cMP"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="qxL-4R-Lgo"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PWx-ZU-dPy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2879" y="510"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="coding" width="21" height="21"/>
         <image name="graph" width="21" height="21"/>
         <image name="pastes" width="21" height="21"/>
         <image name="profile" width="25" height="25"/>
