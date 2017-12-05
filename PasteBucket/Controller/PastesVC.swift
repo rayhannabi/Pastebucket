@@ -12,7 +12,8 @@ class PastesVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        let title = TitleLabel.get()
+        self.navigationItem.titleView = title
     }
 }

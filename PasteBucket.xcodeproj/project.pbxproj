@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E814C4931FD6D92F0043680C /* TitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E814C4921FD6D92F0043680C /* TitleLabel.swift */; };
+		E814C4951FD6DBA50043680C /* TrendingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E814C4941FD6DBA50043680C /* TrendingVC.swift */; };
+		E814C4971FD6DC370043680C /* ProfileTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E814C4961FD6DC370043680C /* ProfileTVC.swift */; };
 		E85E1DB71FCD7E5B00CC72E1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E85E1DB61FCD7E5B00CC72E1 /* AppDelegate.swift */; };
 		E85E1DB91FCD7E5B00CC72E1 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E85E1DB81FCD7E5B00CC72E1 /* LoginVC.swift */; };
 		E85E1DBC1FCD7E5B00CC72E1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E85E1DBA1FCD7E5B00CC72E1 /* Main.storyboard */; };
@@ -14,8 +17,8 @@
 		E85E1DC11FCD7E5B00CC72E1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E85E1DBF1FCD7E5B00CC72E1 /* LaunchScreen.storyboard */; };
 		E85E1DCC1FCD887100CC72E1 /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E85E1DCB1FCD887100CC72E1 /* RoundedButton.swift */; };
 		E85E1DCE1FCDE1EC00CC72E1 /* PastesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E85E1DCD1FCDE1EC00CC72E1 /* PastesVC.swift */; };
-		E85E1DD01FCDE25900CC72E1 /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E85E1DCF1FCDE25900CC72E1 /* ProfileVC.swift */; };
 		E85E1DD21FCDF01E00CC72E1 /* CreatePasteVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E85E1DD11FCDF01E00CC72E1 /* CreatePasteVC.swift */; };
+		E86A33EA1FD3F59100B3235A /* RoundedImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E86A33E91FD3F59100B3235A /* RoundedImageView.swift */; };
 		E88FECCE1FD1D62400B20A02 /* PasteSyntax.swift in Sources */ = {isa = PBXBuildFile; fileRef = E88FECCD1FD1D62400B20A02 /* PasteSyntax.swift */; };
 		E88FECD21FD1DC9700B20A02 /* Paste.swift in Sources */ = {isa = PBXBuildFile; fileRef = E88FECD11FD1DC9700B20A02 /* Paste.swift */; };
 		E88FECD41FD2104E00B20A02 /* PasteSyntaxTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E88FECD31FD2104E00B20A02 /* PasteSyntaxTVC.swift */; };
@@ -24,6 +27,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E814C4921FD6D92F0043680C /* TitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleLabel.swift; sourceTree = "<group>"; };
+		E814C4941FD6DBA50043680C /* TrendingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingVC.swift; sourceTree = "<group>"; };
+		E814C4961FD6DC370043680C /* ProfileTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTVC.swift; sourceTree = "<group>"; };
 		E85E1DB31FCD7E5B00CC72E1 /* PasteBucket.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PasteBucket.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E85E1DB61FCD7E5B00CC72E1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E85E1DB81FCD7E5B00CC72E1 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
@@ -33,8 +39,8 @@
 		E85E1DC21FCD7E5B00CC72E1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E85E1DCB1FCD887100CC72E1 /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
 		E85E1DCD1FCDE1EC00CC72E1 /* PastesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PastesVC.swift; sourceTree = "<group>"; };
-		E85E1DCF1FCDE25900CC72E1 /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
 		E85E1DD11FCDF01E00CC72E1 /* CreatePasteVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePasteVC.swift; sourceTree = "<group>"; };
+		E86A33E91FD3F59100B3235A /* RoundedImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedImageView.swift; sourceTree = "<group>"; };
 		E88FECCD1FD1D62400B20A02 /* PasteSyntax.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasteSyntax.swift; sourceTree = "<group>"; };
 		E88FECD11FD1DC9700B20A02 /* Paste.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Paste.swift; sourceTree = "<group>"; };
 		E88FECD31FD2104E00B20A02 /* PasteSyntaxTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasteSyntaxTVC.swift; sourceTree = "<group>"; };
@@ -98,6 +104,8 @@
 			isa = PBXGroup;
 			children = (
 				E85E1DCB1FCD887100CC72E1 /* RoundedButton.swift */,
+				E86A33E91FD3F59100B3235A /* RoundedImageView.swift */,
+				E814C4921FD6D92F0043680C /* TitleLabel.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -107,10 +115,11 @@
 			children = (
 				E85E1DB81FCD7E5B00CC72E1 /* LoginVC.swift */,
 				E85E1DCD1FCDE1EC00CC72E1 /* PastesVC.swift */,
-				E85E1DCF1FCDE25900CC72E1 /* ProfileVC.swift */,
 				E85E1DD11FCDF01E00CC72E1 /* CreatePasteVC.swift */,
 				E88FECD31FD2104E00B20A02 /* PasteSyntaxTVC.swift */,
 				E8EF20871FD3110F00F66E38 /* PasteOptionsTVC.swift */,
+				E814C4941FD6DBA50043680C /* TrendingVC.swift */,
+				E814C4961FD6DC370043680C /* ProfileTVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -187,14 +196,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E85E1DD01FCDE25900CC72E1 /* ProfileVC.swift in Sources */,
 				E85E1DB91FCD7E5B00CC72E1 /* LoginVC.swift in Sources */,
+				E814C4971FD6DC370043680C /* ProfileTVC.swift in Sources */,
 				E8EF208A1FD314D500F66E38 /* PasteOptions.swift in Sources */,
+				E814C4931FD6D92F0043680C /* TitleLabel.swift in Sources */,
 				E85E1DD21FCDF01E00CC72E1 /* CreatePasteVC.swift in Sources */,
+				E814C4951FD6DBA50043680C /* TrendingVC.swift in Sources */,
 				E88FECD41FD2104E00B20A02 /* PasteSyntaxTVC.swift in Sources */,
 				E85E1DCC1FCD887100CC72E1 /* RoundedButton.swift in Sources */,
 				E85E1DCE1FCDE1EC00CC72E1 /* PastesVC.swift in Sources */,
 				E88FECCE1FD1D62400B20A02 /* PasteSyntax.swift in Sources */,
+				E86A33EA1FD3F59100B3235A /* RoundedImageView.swift in Sources */,
 				E85E1DB71FCD7E5B00CC72E1 /* AppDelegate.swift in Sources */,
 				E8EF20881FD3110F00F66E38 /* PasteOptionsTVC.swift in Sources */,
 				E88FECD21FD1DC9700B20A02 /* Paste.swift in Sources */,

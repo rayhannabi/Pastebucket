@@ -21,6 +21,5 @@ class RoundedButton: UIButton {
     
     private func customizeView() {
         layer.cornerRadius = 5
-        layer.backgroundColor = #colorLiteral(red: 0, green: 0.3285208941, blue: 0.5748849511, alpha: 1)
     }
 }

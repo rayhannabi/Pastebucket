@@ -14,4 +14,7 @@ class CreatePasteVC: UIViewController {
         super.viewDidLoad()
     }
 
+    @IBAction func cancelPressed(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
 }

@@ -25,7 +25,7 @@ class PasteSyntaxTVC: UITableViewController {
         searchController.dimsBackgroundDuringPresentation = true
         searchController.obscuresBackgroundDuringPresentation = false
         searchController.searchBar.placeholder = "Search for syntax"
-        
+       
         tableView.tableHeaderView = searchController.searchBar
         definesPresentationContext = true
 
