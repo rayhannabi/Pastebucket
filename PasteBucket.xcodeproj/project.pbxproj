@@ -11,6 +11,9 @@
 		E814C4971FD6DC370043680C /* ProfileTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E814C4961FD6DC370043680C /* ProfileTVC.swift */; };
 		E814C4991FD733D80043680C /* PastesTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E814C4981FD733D80043680C /* PastesTVC.swift */; };
 		E814C49B1FD742F90043680C /* TrendingTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E814C49A1FD742F90043680C /* TrendingTVC.swift */; };
+		E814C49D1FD7602A0043680C /* SearchFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E814C49C1FD7602A0043680C /* SearchFooterView.swift */; };
+		E814C4A01FD76D0F0043680C /* UserType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E814C49F1FD76D0F0043680C /* UserType.swift */; };
+		E814C4A21FD76D770043680C /* PasteOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E814C4A11FD76D770043680C /* PasteOperation.swift */; };
 		E85E1DB71FCD7E5B00CC72E1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E85E1DB61FCD7E5B00CC72E1 /* AppDelegate.swift */; };
 		E85E1DB91FCD7E5B00CC72E1 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E85E1DB81FCD7E5B00CC72E1 /* LoginVC.swift */; };
 		E85E1DBC1FCD7E5B00CC72E1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E85E1DBA1FCD7E5B00CC72E1 /* Main.storyboard */; };
@@ -31,6 +34,9 @@
 		E814C4961FD6DC370043680C /* ProfileTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTVC.swift; sourceTree = "<group>"; };
 		E814C4981FD733D80043680C /* PastesTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PastesTVC.swift; sourceTree = "<group>"; };
 		E814C49A1FD742F90043680C /* TrendingTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingTVC.swift; sourceTree = "<group>"; };
+		E814C49C1FD7602A0043680C /* SearchFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchFooterView.swift; sourceTree = "<group>"; };
+		E814C49F1FD76D0F0043680C /* UserType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserType.swift; sourceTree = "<group>"; };
+		E814C4A11FD76D770043680C /* PasteOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasteOperation.swift; sourceTree = "<group>"; };
 		E85E1DB31FCD7E5B00CC72E1 /* PasteBucket.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PasteBucket.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E85E1DB61FCD7E5B00CC72E1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E85E1DB81FCD7E5B00CC72E1 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
@@ -59,6 +65,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E814C49E1FD76CE90043680C /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				E814C49F1FD76D0F0043680C /* UserType.swift */,
+				E814C4A11FD76D770043680C /* PasteOperation.swift */,
+			);
+			path = Enums;
+			sourceTree = "<group>";
+		};
 		E85E1DAA1FCD7E5B00CC72E1 = {
 			isa = PBXGroup;
 			children = (
@@ -78,6 +93,7 @@
 		E85E1DB51FCD7E5B00CC72E1 /* PasteBucket */ = {
 			isa = PBXGroup;
 			children = (
+				E814C49E1FD76CE90043680C /* Enums */,
 				E85E1DCA1FCD7FAE00CC72E1 /* Controller */,
 				E85E1DC91FCD7FA500CC72E1 /* View */,
 				E85E1DC81FCD7F8A00CC72E1 /* Model */,
@@ -106,6 +122,7 @@
 				E85E1DCB1FCD887100CC72E1 /* RoundedButton.swift */,
 				E86A33E91FD3F59100B3235A /* RoundedImageView.swift */,
 				E814C4921FD6D92F0043680C /* TitleLabel.swift */,
+				E814C49C1FD7602A0043680C /* SearchFooterView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -197,14 +214,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				E85E1DB91FCD7E5B00CC72E1 /* LoginVC.swift in Sources */,
+				E814C49D1FD7602A0043680C /* SearchFooterView.swift in Sources */,
 				E814C4971FD6DC370043680C /* ProfileTVC.swift in Sources */,
 				E8EF208A1FD314D500F66E38 /* PasteOptions.swift in Sources */,
 				E814C4931FD6D92F0043680C /* TitleLabel.swift in Sources */,
 				E85E1DD21FCDF01E00CC72E1 /* CreatePasteVC.swift in Sources */,
+				E814C4A21FD76D770043680C /* PasteOperation.swift in Sources */,
 				E88FECD41FD2104E00B20A02 /* PasteSyntaxTVC.swift in Sources */,
 				E814C49B1FD742F90043680C /* TrendingTVC.swift in Sources */,
 				E85E1DCC1FCD887100CC72E1 /* RoundedButton.swift in Sources */,
 				E88FECCE1FD1D62400B20A02 /* PasteSyntax.swift in Sources */,
+				E814C4A01FD76D0F0043680C /* UserType.swift in Sources */,
 				E86A33EA1FD3F59100B3235A /* RoundedImageView.swift in Sources */,
 				E85E1DB71FCD7E5B00CC72E1 /* AppDelegate.swift in Sources */,
 				E8EF20881FD3110F00F66E38 /* PasteOptionsTVC.swift in Sources */,

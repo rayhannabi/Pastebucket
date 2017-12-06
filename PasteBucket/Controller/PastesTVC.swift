@@ -10,7 +10,10 @@ import UIKit
 
 class PastesTVC: UITableViewController {
 
-    var demoData: [Int] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+    var demoData: [Int] = [11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25]
+    var filteredData = [Int]()
+    
+    var searchFooter: SearchFooterView?
     
     // Searchbar
     let searchController = UISearchController(searchResultsController: nil)
@@ -37,6 +40,12 @@ class PastesTVC: UITableViewController {
         self.navigationItem.hidesSearchBarWhenScrolling = false
         
         UITextField.appearance(whenContainedInInstancesOf: [UISearchBar.self]).defaultTextAttributes = [NSAttributedStringKey.foregroundColor.rawValue: UIColor.white]
+        
+        self.searchFooter = SearchFooterView(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: 50))
+        
+        if let searchFooter = self.searchFooter {
+            tableView.tableFooterView = searchFooter
+        }
     }
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -44,14 +53,22 @@ class PastesTVC: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if isFiltering() {
+            self.searchFooter?.setIsFiltering(filtered: filteredData.count, of: demoData.count)
+            return filteredData.count
+        }
+        self.searchFooter?.setNotFiltering()
         return demoData.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "PasteCell", for: indexPath)
 
-        cell.textLabel?.text = String(describing: demoData[indexPath.row])
-
+        if isFiltering() {
+            cell.textLabel?.text = String(describing: filteredData[indexPath.row])
+        } else {
+            cell.textLabel?.text = String(describing: demoData[indexPath.row])
+        }
         return cell
     }
     
@@ -84,12 +101,27 @@ class PastesTVC: UITableViewController {
         
         return [deleteAction, shareAction]
     }
-
 }
 
 extension PastesTVC: UISearchResultsUpdating {
     
     func updateSearchResults(for searchController: UISearchController) {
-        // update
+        filterContent(searchController.searchBar.text!)
+    }
+    
+    func searchBarIsEmpty() -> Bool {
+        return searchController.searchBar.text?.isEmpty ?? true
+    }
+    
+    func filterContent(_ searchText: String, scope: String = "All") {
+        filteredData = demoData.filter({ (data) -> Bool in
+            return String(describing: data).lowercased().contains(searchText.lowercased())
+        })
+        
+        tableView.reloadData()
+    }
+    
+    func isFiltering() -> Bool {
+        return searchController.isActive && !searchBarIsEmpty()
     }
 }
