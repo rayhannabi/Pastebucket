@@ -122,7 +122,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-761" y="-300"/>
+            <point key="canvasLocation" x="486" y="-303"/>
         </scene>
         <!--ProfileTVC-->
         <scene sceneID="JKG-4U-umi">
@@ -291,7 +291,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7eb-Wy-dZq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1092" y="750.67466266866575"/>
+            <point key="canvasLocation" x="1342" y="600"/>
         </scene>
         <!--New Paste-->
         <scene sceneID="8MP-Mq-9Wr">
@@ -304,7 +304,7 @@
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="I5X-Rf-TUo">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="551"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <mutableString key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</mutableString>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="13"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no"/>
                             </textView>
@@ -320,9 +320,15 @@
                         <viewLayoutGuide key="safeArea" id="0Cz-ln-IpC"/>
                     </view>
                     <toolbarItems>
-                        <barButtonItem systemItem="action" id="byM-UT-B0o"/>
+                        <barButtonItem systemItem="action" id="byM-UT-B0o">
+                            <connections>
+                                <action selector="ActionPressed:" destination="JLQ-dD-B1a" id="Uqs-rX-Idv"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="uhe-QX-MUL"/>
-                        <barButtonItem image="coding" style="plain" id="0Od-7y-GOV">
+                        <barButtonItem title="Item" style="plain" id="Ya2-jD-nUL"/>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="1bw-Wg-Y5v"/>
+                        <barButtonItem image="coding" id="0Od-7y-GOV">
                             <connections>
                                 <segue destination="aAp-HE-KYF" kind="show" identifier="ToSyntax" id="Ikm-H7-tGZ"/>
                             </connections>
@@ -339,15 +345,23 @@
                         <barButtonItem key="rightBarButtonItem" title="Next" id="J54-Yb-Wlz">
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
-                                <segue destination="oIt-dt-ZfR" kind="show" id="bBp-RA-BUF"/>
+                                <action selector="nextPressed:" destination="JLQ-dD-B1a" id="Ac1-kx-Mym"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="actionButton" destination="byM-UT-B0o" id="Qiq-6v-tVy"/>
+                        <outlet property="chooseSyntaxButton" destination="0Od-7y-GOV" id="6bj-a3-AIb"/>
+                        <outlet property="codeView" destination="I5X-Rf-TUo" id="FnS-HA-I0t"/>
+                        <outlet property="nextButton" destination="J54-Yb-Wlz" id="cwb-7g-W6Y"/>
+                        <outlet property="syntaxItem" destination="Ya2-jD-nUL" id="gYd-nJ-akR"/>
+                        <segue destination="oIt-dt-ZfR" kind="show" identifier="ToOptions" id="FKn-2H-yZg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f8P-64-eOX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3624.8000000000002" y="-300"/>
+            <point key="canvasLocation" x="3642" y="-331"/>
         </scene>
         <!--Paste Options-->
         <scene sceneID="P25-nT-GWa">
@@ -491,12 +505,13 @@
                     <connections>
                         <outlet property="expireField" destination="kUO-gp-mwC" id="8tY-Hs-eIs"/>
                         <outlet property="exposureField" destination="c9v-sm-qJm" id="8If-KD-czY"/>
+                        <outlet property="pasteActionButton" destination="xRV-qj-uwq" id="0Hv-sc-05c"/>
                         <outlet property="titleField" destination="akL-YV-Js3" id="hGz-kq-SoT"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ny6-jQ-aGR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4396" y="-300"/>
+            <point key="canvasLocation" x="4774" y="-805"/>
         </scene>
         <!--Choose Syntax-->
         <scene sceneID="kxJ-PJ-ufT">
@@ -538,7 +553,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hcm-9a-C1F" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="exm-7P-RjH" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="4096.8000000000002" y="473.6131934032984"/>
+            <point key="canvasLocation" x="4774" y="-12"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yDV-k2-H6v">
@@ -559,7 +574,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="M4W-NO-l99" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="111" y="-300"/>
+            <point key="canvasLocation" x="1342" y="-304"/>
         </scene>
         <!--PastesTVC-->
         <scene sceneID="iWq-Na-e4y">
@@ -570,12 +585,21 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="PasteCell" id="68B-ug-cgy">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="PasteCell" textLabel="Bwx-zY-4ku" style="IBUITableViewCellStyleDefault" id="68B-ug-cgy">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="68B-ug-cgy" id="eAq-Wv-agp">
                                     <rect key="frame" x="0.0" y="0.0" width="341" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Bwx-zY-4ku">
+                                            <rect key="frame" x="16" y="0.0" width="324" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
@@ -589,20 +613,28 @@
                         <barButtonItem key="rightBarButtonItem" systemItem="compose" id="aST-Gh-z1c">
                             <color key="tintColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
-                                <segue destination="yBG-Bj-JCn" kind="show" id="p17-il-LOm"/>
+                                <action selector="createPastePressed:" destination="nRr-4D-cBy" id="UdQ-ye-6fi"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="byt-aH-Xnv">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </refreshControl>
+                    <connections>
+                        <segue destination="yBG-Bj-JCn" kind="show" identifier="ToCreatePaste" id="eY5-70-tNz"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="brt-Id-NBj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1954" y="-300"/>
+            <point key="canvasLocation" x="2359" y="-340"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="jc5-b0-1Ji">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" toolbarHidden="NO" id="yBG-Bj-JCn" sceneMemberID="viewController">
                     <toolbarItems/>
+                    <navigationItem key="navigationItem" id="nQP-Bv-9co"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" largeTitles="YES" id="dXi-Ml-9gj">
                         <rect key="frame" x="0.0" y="20" width="375" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -619,6 +651,7 @@
                     <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ps0-4o-9XX">
                         <rect key="frame" x="0.0" y="574" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="0.0" green="0.32852089410000002" blue="0.57488495110000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </toolbar>
                     <connections>
                         <segue destination="JLQ-dD-B1a" kind="relationship" relationship="rootViewController" id="7qh-gL-FCu"/>
@@ -626,7 +659,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="s0c-lY-bst" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2804" y="-300"/>
+            <point key="canvasLocation" x="3167" y="-1149"/>
         </scene>
         <!--Profile-->
         <scene sceneID="gOL-mo-ab4">
@@ -654,7 +687,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OXQ-FB-CYN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="372" y="751"/>
+            <point key="canvasLocation" x="486" y="600"/>
         </scene>
         <!--My Pastes-->
         <scene sceneID="B1c-Av-Reo">
@@ -682,7 +715,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zSY-4r-IOf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1092" y="-300"/>
+            <point key="canvasLocation" x="2116" y="-1149"/>
         </scene>
         <!--Trending-->
         <scene sceneID="KzM-gR-r3z">
@@ -704,7 +737,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pbz-GG-DTq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2043.2" y="510.94452773613199"/>
+            <point key="canvasLocation" x="2279" y="600"/>
         </scene>
         <!--TrendingTVC-->
         <scene sceneID="15M-ID-z8F">
@@ -730,10 +763,13 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="qxL-4R-Lgo"/>
+                    <connections>
+                        <segue destination="yBG-Bj-JCn" kind="show" identifier="ToReadPaste" id="PJ1-OW-7lf"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PWx-ZU-dPy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2879" y="510"/>
+            <point key="canvasLocation" x="3206" y="601"/>
         </scene>
     </scenes>
     <resources>
@@ -744,4 +780,7 @@
         <image name="shadow" width="2" height="2"/>
         <image name="user" width="512" height="512"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="eY5-70-tNz"/>
+    </inferredMetricsTieBreakers>
 </document>

@@ -10,9 +10,12 @@ import UIKit
 
 class PasteOptionsTVC: UITableViewController, UIPickerViewDelegate, UIPickerViewDataSource {
 
+    var operation: PasteOperation?
+    
     @IBOutlet weak var titleField: UITextField!
     @IBOutlet weak var expireField: UITextField!
     @IBOutlet weak var exposureField: UITextField!
+    @IBOutlet weak var pasteActionButton: UIButton!
     
     let expireData = PasteOptions.pasteExpires
     let exposureData = PasteOptions.pasteExposure
@@ -71,6 +74,15 @@ class PasteOptionsTVC: UITableViewController, UIPickerViewDelegate, UIPickerView
         exposureField.inputAccessoryView = toolbar
         
         titleField.inputAccessoryView = toolbar
+        
+        if let operation = operation {
+            if operation == .create {
+                self.pasteActionButton.setTitle("CREATE NEW PASTE", for: .normal)
+            } else if operation == .edit {
+                self.pasteActionButton.setTitle("SAVE CHANGES", for: .normal)
+                self.pasteActionButton.setTitleColor(#colorLiteral(red: 0, green: 0.5603182912, blue: 0, alpha: 1), for: .normal)
+            }
+        }
     }
     
     @objc func donePressed(sender: UIBarButtonItem) {

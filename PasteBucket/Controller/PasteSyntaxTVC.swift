@@ -59,6 +59,7 @@ class PasteSyntaxTVC: UITableViewController {
         
         if isFiltering() {
             searchFooter?.setIsFiltering(filtered: filteredSyntaxes.count, of: syntaxes.count)
+            print("F: \(filteredSyntaxes.count) C: \(syntaxes.count)")
             return filteredSyntaxes.count
         }
         searchFooter?.setNotFiltering()
@@ -89,8 +90,15 @@ class PasteSyntaxTVC: UITableViewController {
             })
             // performSegue(withIdentifier: "BackToPaste", sender: self)
         } else {
-            selectedSyntax = syntaxes[indexPath.row]
-            performSegue(withIdentifier: "BackToPaste", sender: self)
+            if searchController.isActive {
+                selectedSyntax = syntaxes[indexPath.row]
+                searchController.dismiss(animated: true, completion: {
+                    self.performSegue(withIdentifier: "BackToPaste", sender: self)
+                })
+            } else {
+                selectedSyntax = syntaxes[indexPath.row]
+                performSegue(withIdentifier: "BackToPaste", sender: self)
+            }
         }
     }
     override func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {

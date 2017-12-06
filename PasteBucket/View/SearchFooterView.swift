@@ -38,13 +38,13 @@ class SearchFooterView: UIView {
     }
     
     fileprivate func showFooter() {
-        UIView.animate(withDuration: 0.7) { [unowned self] in
+        UIView.animate(withDuration: 0.3) { [unowned self] in
             self.alpha = 1.0
         }
     }
     
     fileprivate func hideFooter() {
-        UIView.animate(withDuration: 0.7) { [unowned self] in
+        UIView.animate(withDuration: 0.3) { [unowned self] in
             self.alpha = 0.0
         }
     }
@@ -62,8 +62,9 @@ extension SearchFooterView {
             setNotFiltering()
         } else if filteredItemCount == 0 {
             self.label.text = "No item found"
+            showFooter()
         } else {
-            self.label.text = "Showing \(filteredItemCount) of \(totalItemCount) results"
+            self.label.text = "Showing \(filteredItemCount) of \(totalItemCount) items"
             showFooter()
         }
     }
