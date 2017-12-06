@@ -33,8 +33,6 @@ class PastesTVC: UITableViewController {
         searchController.searchBar.placeholder = "Search your Pastes"
         searchController.searchBar.tintColor = UIColor.white
         
-        print(searchController.searchBar.value(forKey: "searchField")!)
-        
         definesPresentationContext = true
         self.navigationItem.searchController = self.searchController
         self.navigationItem.hidesSearchBarWhenScrolling = false

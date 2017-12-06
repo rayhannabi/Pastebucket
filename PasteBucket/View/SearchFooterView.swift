@@ -28,7 +28,7 @@ class SearchFooterView: UIView {
     }
     
     func configureView() {
-        self.backgroundColor = #colorLiteral(red: 0.9999960065, green: 1, blue: 1, alpha: 1)
+        self.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0)
         self.alpha = 0.0
         
         self.label.font = UIFont.systemFont(ofSize: 13)

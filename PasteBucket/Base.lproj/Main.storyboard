@@ -320,10 +320,11 @@
                         <viewLayoutGuide key="safeArea" id="0Cz-ln-IpC"/>
                     </view>
                     <toolbarItems>
+                        <barButtonItem systemItem="action" id="byM-UT-B0o"/>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="uhe-QX-MUL"/>
                         <barButtonItem image="coding" style="plain" id="0Od-7y-GOV">
                             <connections>
-                                <segue destination="aAp-HE-KYF" kind="show" id="Ikm-H7-tGZ"/>
+                                <segue destination="aAp-HE-KYF" kind="show" identifier="ToSyntax" id="Ikm-H7-tGZ"/>
                             </connections>
                         </barButtonItem>
                     </toolbarItems>
@@ -500,8 +501,8 @@
         <!--Choose Syntax-->
         <scene sceneID="kxJ-PJ-ufT">
             <objects>
-                <tableViewController title="Choose Syntax" id="aAp-HE-KYF" customClass="PasteSyntaxTVC" customModule="PasteBucket" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="NmM-Nr-h2l">
+                <tableViewController title="Choose Syntax" hidesBottomBarWhenPushed="YES" id="aAp-HE-KYF" customClass="PasteSyntaxTVC" customModule="PasteBucket" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" bouncesZoom="NO" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="NmM-Nr-h2l">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="551"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
@@ -529,8 +530,13 @@
                             <outlet property="delegate" destination="aAp-HE-KYF" id="kue-FE-bId"/>
                         </connections>
                     </tableView>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <segue destination="exm-7P-RjH" kind="unwind" identifier="BackToPaste" unwindAction="unwindFromPasteSyntaxTVC:" id="TTR-4e-71k"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hcm-9a-C1F" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="exm-7P-RjH" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="4096.8000000000002" y="473.6131934032984"/>
         </scene>
