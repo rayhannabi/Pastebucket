@@ -1,0 +1,6 @@
+framework module Pods_PasteBucket {
+  umbrella header "Pods-PasteBucket-umbrella.h"
+
+  export *
+  module * { export * }
+}

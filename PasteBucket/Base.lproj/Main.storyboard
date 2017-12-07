@@ -325,6 +325,9 @@
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="13"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="doneAccessory" value="YES"/>
+                                </userDefinedRuntimeAttributes>
                             </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -379,7 +382,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f8P-64-eOX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3642" y="-331"/>
+            <point key="canvasLocation" x="3743" y="-360"/>
         </scene>
         <!--Paste Options-->
         <scene sceneID="P25-nT-GWa">
@@ -529,7 +532,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ny6-jQ-aGR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4774" y="-805"/>
+            <point key="canvasLocation" x="4626" y="-700"/>
         </scene>
         <!--Choose Syntax-->
         <scene sceneID="kxJ-PJ-ufT">
@@ -571,7 +574,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hcm-9a-C1F" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="exm-7P-RjH" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="4774" y="-12"/>
+            <point key="canvasLocation" x="4625" y="9"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yDV-k2-H6v">
@@ -645,7 +648,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="brt-Id-NBj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2359" y="-340"/>
+            <point key="canvasLocation" x="2348" y="-304"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="jc5-b0-1Ji">
