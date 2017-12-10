@@ -8,7 +8,7 @@
 
 import Foundation
 
-public struct API {
+public struct Api {
     static let apiKey: String = "8dc0b1a928199c4f2fc5e1960c2d6976"
     
     static let apiPost: String = "https://pastebin.com/api/api_post.php"
@@ -21,4 +21,5 @@ public struct API {
     static let kOption = "api_option"
     
     static let pUserDetail = "userdetails"
+    static let pTrending = "trends"
 }

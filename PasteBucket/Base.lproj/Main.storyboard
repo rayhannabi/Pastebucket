@@ -382,7 +382,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f8P-64-eOX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3743" y="-360"/>
+            <point key="canvasLocation" x="3921" y="-358"/>
         </scene>
         <!--Paste Options-->
         <scene sceneID="P25-nT-GWa">
@@ -680,7 +680,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="s0c-lY-bst" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3167" y="-1149"/>
+            <point key="canvasLocation" x="3169" y="-304"/>
         </scene>
         <!--Profile-->
         <scene sceneID="gOL-mo-ab4">
@@ -738,11 +738,11 @@
             </objects>
             <point key="canvasLocation" x="2116" y="-1149"/>
         </scene>
-        <!--Trending-->
+        <!--Trends-->
         <scene sceneID="KzM-gR-r3z">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="05A-s9-R6s" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Trending" image="graph" id="G2I-1l-WLJ">
+                    <tabBarItem key="tabBarItem" title="Trends" image="graph" id="G2I-1l-WLJ">
                         <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="-3"/>
                     </tabBarItem>
                     <toolbarItems/>
@@ -760,10 +760,10 @@
             </objects>
             <point key="canvasLocation" x="2279" y="600"/>
         </scene>
-        <!--TrendingTVC-->
+        <!--TrendsTVC-->
         <scene sceneID="15M-ID-z8F">
             <objects>
-                <tableViewController id="akm-hD-gL8" customClass="TrendingTVC" customModule="PasteBucket" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="akm-hD-gL8" customClass="TrendsTVC" customModule="PasteBucket" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="VTV-4Q-4qA">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -802,6 +802,6 @@
         <image name="shadow" width="2" height="2"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="eY5-70-tNz"/>
+        <segue reference="PJ1-OW-7lf"/>
     </inferredMetricsTieBreakers>
 </document>

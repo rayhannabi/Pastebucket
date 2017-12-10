@@ -17,10 +17,10 @@ class ApiWrapper {
                          completion: @escaping (User?) -> ()) {
         
         // MARK: login request
-        Alamofire.request(URL(string: API.apiLogin)!, method: .post, parameters: [
-            API.kDevKey: API.apiKey,
-            API.kUsername: username,
-            API.kUserPassword: password
+        Alamofire.request(URL(string: Api.apiLogin)!, method: .post, parameters: [
+            Api.kDevKey: Api.apiKey,
+            Api.kUsername: username,
+            Api.kUserPassword: password
             ]).validate().responseString(completionHandler: { (data) in
                 
                 if let actualData = data.value {
@@ -39,10 +39,10 @@ class ApiWrapper {
     class func parseUser(loggedInUser: User?, completion: @escaping (User?) -> ()) {
         
         if let user = loggedInUser {
-            Alamofire.request(URL(string: API.apiPost)!, method: .post, parameters: [
-                API.kDevKey: API.apiKey,
-                API.kUserKey: user.userId,
-                API.kOption: API.pUserDetail
+            Alamofire.request(URL(string: Api.apiPost)!, method: .post, parameters: [
+                Api.kDevKey: Api.apiKey,
+                Api.kUserKey: user.userId,
+                Api.kOption: Api.pUserDetail
                 ]
                 ).validate().responseString(completionHandler: { (response) in
                     if let responseValue = response.value {
