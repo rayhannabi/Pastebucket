@@ -32,7 +32,7 @@ class ProfileTVC: UITableViewController {
     
     func setData(for uType: UserType) {
         if uType == .guestUser {
-            profileImage.image = UIImage(named: "user")
+            profileImage.image = UIImage(named: "guest")
             profileUsername.text = "Guest"
             profileEmail.text = "Not Available"
             profileCountry.text = "Not Available"
@@ -43,9 +43,6 @@ class ProfileTVC: UITableViewController {
                 item?.textColor = UIColor.gray
             }
         } else {
-            
-            print(self.user?.name as Any)
-            
             if let user = self.user {
                 Alamofire.request(
                     URL(string: user.avatarUrl!)!,
@@ -76,7 +73,9 @@ class ProfileTVC: UITableViewController {
                                             message: "You are about to be logged out.\nAre you sure?",
                                             preferredStyle: .actionSheet)
         
-        let logoutAction = UIAlertAction(title: "Logout", style: .destructive) { (action) in
+        let logoutAction = UIAlertAction(title: "Log out", style: .destructive) { (action) in
+            
+            self.user?.clearDefaults()
             let pvc = self.presentingViewController
             
             self.dismiss(animated: true) {

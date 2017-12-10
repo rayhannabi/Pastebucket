@@ -10,6 +10,15 @@ import UIKit
 
 class Util {
     class func showAlert(viewController: UIViewController, withTitle title: String, andMessage msg: String) {
+        
+        UIApplication.shared.endIgnoringInteractionEvents()
+        
+        if let loginVC = viewController as? LoginVC {
+            if !loginVC.indicator.isHidden {
+                loginVC.indicator.hide()
+            }
+        }
+        
         let alert = UIAlertController(title: title, message: msg, preferredStyle: .alert)
         let action = UIAlertAction(title: "OK", style: .cancel) { (action) in
             alert.dismiss(animated: true, completion: nil)

@@ -25,8 +25,17 @@ class PastesTVC: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        prepareUserData()
         prepareView()
         prepareData()
+    }
+    
+    func prepareUserData() {
+        if let usr = loggedInUser {
+            ApiWrapper.parseUser(loggedInUser: usr, completion: { (user) in
+                self.loggedInUser = user
+            })
+        }
     }
     
     func prepareData() {

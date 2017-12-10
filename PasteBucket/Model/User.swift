@@ -60,4 +60,53 @@ class User {
         
         userDefault.synchronize()
     }
+    
+    class func getFromDefaults() -> User? {
+        let userDefault = UserDefaults.standard
+        
+        let key = userDefault.string(forKey: "USER_KEY")
+        let name = userDefault.string(forKey: "USER_KEY")
+        let format = userDefault.string(forKey: "USER_FORMAT")
+        let expiration = userDefault.string(forKey: "USER_EXPIRATION")
+        let avatar = userDefault.string(forKey: "USER_AVATAR")
+        let scope = userDefault.string(forKey: "USER_SCOPE")
+        let website = userDefault.string(forKey: "USER_WEBSITE")
+        let email = userDefault.string(forKey: "USER_EMAIL")
+        let location = userDefault.string(forKey: "USER_LOCATION")
+        let type = userDefault.string(forKey: "USER_ACCOUNTTYPE")
+        
+        if let key = key {
+            let usr = User(userId: key)
+            usr.name = name
+            usr.formatShort = format
+            usr.expiration = expiration
+            usr.avatarUrl = avatar
+            usr.userScope = scope
+            usr.website = website
+            usr.email = email
+            usr.location = location
+            usr.accountType = type
+            
+            return usr
+        }
+        
+        return nil
+    }
+    
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

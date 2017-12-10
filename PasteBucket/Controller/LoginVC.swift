@@ -13,13 +13,19 @@ class LoginVC: UIViewController {
     
     var userType: UserType?
     var loggedInUser: User?
+    var indicator: ActivityIndicatorView!
     
     @IBOutlet weak var usernameField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        indicator = ActivityIndicatorView(text: "Logging In")
+        self.view.addSubview(indicator)
+        
+        indicator.hide()
+
         usernameField.text = ""
         passwordField.text = ""
     }
@@ -43,17 +49,24 @@ class LoginVC: UIViewController {
         if Connectivity.hasNetworkonnection() {
             if let uname = usernameField.text, let password = passwordField.text {
                 if (!uname.isEmpty && !password.isEmpty) {
-                    print(uname, password)
-                    loggedInUser = ApiWrapper.loginUser(
-                        viewController: self,
-                        username: uname,
-                        password: password)
-                    if loggedInUser != nil {
-                    self.performSegue(withIdentifier: "ToMain", sender: self)
-                    }
+                    
+                    UIApplication.shared.beginIgnoringInteractionEvents()
+                    indicator.show()
+                    ApiWrapper.loginUser(viewController: self,
+                                         username: uname,
+                                         password: password,
+                                         completion: { (usr) in
+                                            self.loggedInUser = usr
+                                            self.indicator.hide()
+                                            if self.loggedInUser != nil {
+                                                UIApplication.shared.endIgnoringInteractionEvents()
+                                                //self.performSegue(withIdentifier: "ToMain", sender: self)
+                                            }
+                    })
                 }
             }
         } else {
+            self.indicator.hide()
             Util.showAlert(viewController: self,
                            withTitle: "Error",
                            andMessage: "Could not connect to the internet\nCheck your connection")

@@ -144,7 +144,7 @@
                             <rect key="frame" x="0.0" y="0.0" width="375" height="130"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
-                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user" translatesAutoresizingMaskIntoConstraints="NO" id="4HC-qt-eZY" customClass="RoundedImageView" customModule="PasteBucket" customModuleProvider="target">
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="guest" translatesAutoresizingMaskIntoConstraints="NO" id="4HC-qt-eZY" customClass="RoundedImageView" customModule="PasteBucket" customModuleProvider="target">
                                     <rect key="frame" x="135" y="5" width="105" height="105"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="105" id="apr-F8-Jhh"/>
@@ -796,10 +796,10 @@
     <resources>
         <image name="coding" width="21" height="21"/>
         <image name="graph" width="21" height="21"/>
+        <image name="guest" width="512" height="512"/>
         <image name="pastes" width="21" height="21"/>
         <image name="profile" width="25" height="25"/>
         <image name="shadow" width="2" height="2"/>
-        <image name="user" width="512" height="512"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="eY5-70-tNz"/>
