@@ -24,6 +24,7 @@ class ApiWrapper {
             ]).validate().responseString(completionHandler: { (data) in
                 
                 if let actualData = data.value {
+                    print(actualData)
                     if (actualData.contains("invalid login") || actualData.contains("account not active") )  {
                         Util.showAlert(viewController: viewController, withTitle: "Error", andMessage: "Username and password do not match")
                     } else {

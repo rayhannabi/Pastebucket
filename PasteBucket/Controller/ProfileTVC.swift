@@ -38,6 +38,12 @@ class ProfileTVC: UITableViewController {
             profileCountry.text = "Not Available"
             profileType.text = "Not Applicable"
             
+            tableView.footerView(forSection: 1)?.detailTextLabel?.text =
+            """
+            NOTE: Guest account only contains recent Pastes.
+            Logging out will cause to reset everthing.
+            """
+            
             let col = [profileUsername, profileEmail, profileCountry, profileType]
             for item in col {
                 item?.textColor = UIColor.gray

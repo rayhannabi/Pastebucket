@@ -259,7 +259,7 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection id="fPK-Wn-3v9">
+                            <tableViewSection footerTitle="Note: Guest account only contains recent pastes. If you are using guest account, logging out will cause to reset everthing." id="fPK-Wn-3v9">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="XrG-cS-MzC">
                                         <rect key="frame" x="0.0" y="397.5" width="375" height="44"/>

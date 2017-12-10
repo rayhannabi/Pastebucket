@@ -44,6 +44,12 @@ class LoginVC: UIViewController {
     }
     
     @IBAction func loginPressed(_ sender: Any) {
+        if usernameField.isFirstResponder {
+            usernameField.resignFirstResponder()
+        } else {
+            passwordField.resignFirstResponder()
+        }
+        
         userType = UserType.actualUser
         
         if Connectivity.hasNetworkonnection() {
@@ -60,7 +66,7 @@ class LoginVC: UIViewController {
                                             self.indicator.hide()
                                             if self.loggedInUser != nil {
                                                 UIApplication.shared.endIgnoringInteractionEvents()
-                                                //self.performSegue(withIdentifier: "ToMain", sender: self)
+                                                self.performSegue(withIdentifier: "ToMain", sender: self)
                                             }
                     })
                 }
