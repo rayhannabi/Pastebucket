@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "4819D33BE28EDA9DC86946008817BC7A"
+               BlueprintIdentifier = "A265E9BC67F20EBFD1E700016823EAB7"
                BuildableName = "Pods_PasteBucket.framework"
                BlueprintName = "Pods-PasteBucket"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -47,7 +47,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "4819D33BE28EDA9DC86946008817BC7A"
+            BlueprintIdentifier = "A265E9BC67F20EBFD1E700016823EAB7"
             BuildableName = "Pods_PasteBucket.framework"
             BlueprintName = "Pods-PasteBucket"
             ReferencedContainer = "container:Pods.xcodeproj">

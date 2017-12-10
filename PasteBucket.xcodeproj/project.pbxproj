@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		0681B5E44FA558E63104513F /* Pods_PasteBucket.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97DD2739FDBE9454131D02BE /* Pods_PasteBucket.framework */; };
 		E80FE9D01FD83EB700DC20E8 /* KeyboardDoneButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E80FE9CF1FD83EB700DC20E8 /* KeyboardDoneButton.swift */; };
+		E80FE9D21FD9652900DC20E8 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E80FE9D11FD9652900DC20E8 /* User.swift */; };
+		E80FE9D41FD966A000DC20E8 /* Api.swift in Sources */ = {isa = PBXBuildFile; fileRef = E80FE9D31FD966A000DC20E8 /* Api.swift */; };
 		E814C4931FD6D92F0043680C /* TitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E814C4921FD6D92F0043680C /* TitleLabel.swift */; };
 		E814C4971FD6DC370043680C /* ProfileTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E814C4961FD6DC370043680C /* ProfileTVC.swift */; };
 		E814C4991FD733D80043680C /* PastesTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E814C4981FD733D80043680C /* PastesTVC.swift */; };
@@ -17,6 +19,7 @@
 		E814C4A01FD76D0F0043680C /* UserType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E814C49F1FD76D0F0043680C /* UserType.swift */; };
 		E814C4A21FD76D770043680C /* PasteOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E814C4A11FD76D770043680C /* PasteOperation.swift */; };
 		E814C4A41FD7AE390043680C /* EmptyTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E814C4A31FD7AE390043680C /* EmptyTableView.swift */; };
+		E831B2621FDD5E550096B479 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = E831B2611FDD5E550096B479 /* Util.swift */; };
 		E85E1DB71FCD7E5B00CC72E1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E85E1DB61FCD7E5B00CC72E1 /* AppDelegate.swift */; };
 		E85E1DB91FCD7E5B00CC72E1 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E85E1DB81FCD7E5B00CC72E1 /* LoginVC.swift */; };
 		E85E1DBC1FCD7E5B00CC72E1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E85E1DBA1FCD7E5B00CC72E1 /* Main.storyboard */; };
@@ -24,6 +27,9 @@
 		E85E1DC11FCD7E5B00CC72E1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E85E1DBF1FCD7E5B00CC72E1 /* LaunchScreen.storyboard */; };
 		E85E1DCC1FCD887100CC72E1 /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E85E1DCB1FCD887100CC72E1 /* RoundedButton.swift */; };
 		E85E1DD21FCDF01E00CC72E1 /* CreatePasteVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E85E1DD11FCDF01E00CC72E1 /* CreatePasteVC.swift */; };
+		E85FA7951FD9D1BA005F0A5E /* Connectivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = E85FA7941FD9D1BA005F0A5E /* Connectivity.swift */; };
+		E85FA7981FD9D296005F0A5E /* ApiWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E85FA7971FD9D296005F0A5E /* ApiWrapper.swift */; };
+		E85FA79C1FDA6AA2005F0A5E /* XmlParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = E85FA79B1FDA6AA2005F0A5E /* XmlParser.swift */; };
 		E86A33EA1FD3F59100B3235A /* RoundedImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E86A33E91FD3F59100B3235A /* RoundedImageView.swift */; };
 		E88FECCE1FD1D62400B20A02 /* PasteSyntax.swift in Sources */ = {isa = PBXBuildFile; fileRef = E88FECCD1FD1D62400B20A02 /* PasteSyntax.swift */; };
 		E88FECD21FD1DC9700B20A02 /* Paste.swift in Sources */ = {isa = PBXBuildFile; fileRef = E88FECD11FD1DC9700B20A02 /* Paste.swift */; };
@@ -37,6 +43,8 @@
 		7351CF5712F1225C9FE4D0B0 /* Pods-PasteBucket.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PasteBucket.release.xcconfig"; path = "Pods/Target Support Files/Pods-PasteBucket/Pods-PasteBucket.release.xcconfig"; sourceTree = "<group>"; };
 		97DD2739FDBE9454131D02BE /* Pods_PasteBucket.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PasteBucket.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E80FE9CF1FD83EB700DC20E8 /* KeyboardDoneButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardDoneButton.swift; sourceTree = "<group>"; };
+		E80FE9D11FD9652900DC20E8 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		E80FE9D31FD966A000DC20E8 /* Api.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Api.swift; sourceTree = "<group>"; };
 		E814C4921FD6D92F0043680C /* TitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleLabel.swift; sourceTree = "<group>"; };
 		E814C4961FD6DC370043680C /* ProfileTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTVC.swift; sourceTree = "<group>"; };
 		E814C4981FD733D80043680C /* PastesTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PastesTVC.swift; sourceTree = "<group>"; };
@@ -45,6 +53,7 @@
 		E814C49F1FD76D0F0043680C /* UserType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserType.swift; sourceTree = "<group>"; };
 		E814C4A11FD76D770043680C /* PasteOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasteOperation.swift; sourceTree = "<group>"; };
 		E814C4A31FD7AE390043680C /* EmptyTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyTableView.swift; sourceTree = "<group>"; };
+		E831B2611FDD5E550096B479 /* Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
 		E85E1DB31FCD7E5B00CC72E1 /* PasteBucket.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PasteBucket.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E85E1DB61FCD7E5B00CC72E1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E85E1DB81FCD7E5B00CC72E1 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
@@ -54,6 +63,9 @@
 		E85E1DC21FCD7E5B00CC72E1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E85E1DCB1FCD887100CC72E1 /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
 		E85E1DD11FCDF01E00CC72E1 /* CreatePasteVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePasteVC.swift; sourceTree = "<group>"; };
+		E85FA7941FD9D1BA005F0A5E /* Connectivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Connectivity.swift; sourceTree = "<group>"; };
+		E85FA7971FD9D296005F0A5E /* ApiWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiWrapper.swift; sourceTree = "<group>"; };
+		E85FA79B1FDA6AA2005F0A5E /* XmlParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XmlParser.swift; sourceTree = "<group>"; };
 		E86A33E91FD3F59100B3235A /* RoundedImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedImageView.swift; sourceTree = "<group>"; };
 		E88FECCD1FD1D62400B20A02 /* PasteSyntax.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasteSyntax.swift; sourceTree = "<group>"; };
 		E88FECD11FD1DC9700B20A02 /* Paste.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Paste.swift; sourceTree = "<group>"; };
@@ -121,6 +133,7 @@
 		E85E1DB51FCD7E5B00CC72E1 /* PasteBucket */ = {
 			isa = PBXGroup;
 			children = (
+				E85FA7961FD9D25E005F0A5E /* Utility */,
 				E814C49E1FD76CE90043680C /* Enums */,
 				E85E1DCA1FCD7FAE00CC72E1 /* Controller */,
 				E85E1DC91FCD7FA500CC72E1 /* View */,
@@ -140,6 +153,7 @@
 				E88FECCD1FD1D62400B20A02 /* PasteSyntax.swift */,
 				E88FECD11FD1DC9700B20A02 /* Paste.swift */,
 				E8EF20891FD314D500F66E38 /* PasteOptions.swift */,
+				E80FE9D11FD9652900DC20E8 /* User.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -169,6 +183,18 @@
 				E814C49A1FD742F90043680C /* TrendingTVC.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		E85FA7961FD9D25E005F0A5E /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				E80FE9D31FD966A000DC20E8 /* Api.swift */,
+				E85FA7971FD9D296005F0A5E /* ApiWrapper.swift */,
+				E85FA7941FD9D1BA005F0A5E /* Connectivity.swift */,
+				E85FA79B1FDA6AA2005F0A5E /* XmlParser.swift */,
+				E831B2611FDD5E550096B479 /* Util.swift */,
+			);
+			path = Utility;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -283,10 +309,12 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-PasteBucket/Pods-PasteBucket-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyXMLParser/SwiftyXMLParser.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyXMLParser.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -308,15 +336,21 @@
 				E8EF208A1FD314D500F66E38 /* PasteOptions.swift in Sources */,
 				E814C4931FD6D92F0043680C /* TitleLabel.swift in Sources */,
 				E85E1DD21FCDF01E00CC72E1 /* CreatePasteVC.swift in Sources */,
+				E85FA79C1FDA6AA2005F0A5E /* XmlParser.swift in Sources */,
+				E80FE9D21FD9652900DC20E8 /* User.swift in Sources */,
 				E814C4A21FD76D770043680C /* PasteOperation.swift in Sources */,
+				E85FA7981FD9D296005F0A5E /* ApiWrapper.swift in Sources */,
 				E88FECD41FD2104E00B20A02 /* PasteSyntaxTVC.swift in Sources */,
 				E814C49B1FD742F90043680C /* TrendingTVC.swift in Sources */,
+				E80FE9D41FD966A000DC20E8 /* Api.swift in Sources */,
 				E85E1DCC1FCD887100CC72E1 /* RoundedButton.swift in Sources */,
 				E88FECCE1FD1D62400B20A02 /* PasteSyntax.swift in Sources */,
 				E814C4A01FD76D0F0043680C /* UserType.swift in Sources */,
 				E86A33EA1FD3F59100B3235A /* RoundedImageView.swift in Sources */,
 				E85E1DB71FCD7E5B00CC72E1 /* AppDelegate.swift in Sources */,
+				E85FA7951FD9D1BA005F0A5E /* Connectivity.swift in Sources */,
 				E8EF20881FD3110F00F66E38 /* PasteOptionsTVC.swift in Sources */,
+				E831B2621FDD5E550096B479 /* Util.swift in Sources */,
 				E88FECD21FD1DC9700B20A02 /* Paste.swift in Sources */,
 				E814C4991FD733D80043680C /* PastesTVC.swift in Sources */,
 			);

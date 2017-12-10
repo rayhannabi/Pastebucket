@@ -12,6 +12,7 @@ class PastesTVC: UITableViewController {
     
     var operation: PasteOperation?
     var userType: UserType?
+    var loggedInUser: User?
     
     var demoData: [Int] = [11, 12, 13]
     var filteredData = [Int]()
@@ -169,6 +170,7 @@ class PastesTVC: UITableViewController {
             self.tableView.separatorStyle = .singleLine
             self.tableView.reloadData()
             self.refreshControl?.endRefreshing()
+            
         } else if let ut = userType, ut == .guestUser {
             let refreshedData: [Int] = []
             
@@ -221,12 +223,6 @@ extension PastesTVC: UISearchResultsUpdating {
         return searchController.isActive && !searchBarIsEmpty()
     }
 }
-
-
-
-
-
-
 
 
 

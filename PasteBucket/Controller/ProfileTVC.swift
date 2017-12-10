@@ -7,10 +7,12 @@
 //
 
 import UIKit
+import Alamofire
 
 class ProfileTVC: UITableViewController {
     
     var userType: UserType?
+    var user: User?
     
     @IBOutlet weak var profileImage: RoundedImageView!
     @IBOutlet weak var profileUsername: UILabel!
@@ -41,7 +43,30 @@ class ProfileTVC: UITableViewController {
                 item?.textColor = UIColor.gray
             }
         } else {
-            // set appropiate user data
+            
+            print(self.user?.name as Any)
+            
+            if let user = self.user {
+                Alamofire.request(
+                    URL(string: user.avatarUrl!)!,
+                    method: .get
+                ).validate()
+                    .responseData(completionHandler: { (data) in
+                        self.profileImage.image = UIImage(data: data.data!, scale: 1)
+                    })
+                
+                profileUsername.text = user.name
+                profileEmail.text = user.email
+                profileCountry.text = user.location
+                
+                if let type = user.accountType {
+                    if type == "1" {
+                        profileType.text = "Pro"
+                    } else {
+                        profileType.text = "Normal"
+                    }
+                }
+            }
         }
     }
     

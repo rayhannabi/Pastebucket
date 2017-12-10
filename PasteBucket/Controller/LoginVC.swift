@@ -7,10 +7,12 @@
 //
 
 import UIKit
+import Alamofire
 
 class LoginVC: UIViewController {
-
+    
     var userType: UserType?
+    var loggedInUser: User?
     
     @IBOutlet weak var usernameField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
@@ -26,18 +28,36 @@ class LoginVC: UIViewController {
         usernameField.text = ""
         passwordField.text = ""
     }
-
+    
     override func viewWillAppear(_ animated: Bool) {
         UIApplication.shared.statusBarStyle = .default
     }
-
+    
     override func viewWillDisappear(_ animated: Bool) {
         UIApplication.shared.statusBarStyle = .lightContent
     }
-
+    
     @IBAction func loginPressed(_ sender: Any) {
         userType = UserType.actualUser
-        performSegue(withIdentifier: "ToMain", sender: self)
+        
+        if Connectivity.hasNetworkonnection() {
+            if let uname = usernameField.text, let password = passwordField.text {
+                if (!uname.isEmpty && !password.isEmpty) {
+                    print(uname, password)
+                    loggedInUser = ApiWrapper.loginUser(
+                        viewController: self,
+                        username: uname,
+                        password: password)
+                    if loggedInUser != nil {
+                    self.performSegue(withIdentifier: "ToMain", sender: self)
+                    }
+                }
+            }
+        } else {
+            Util.showAlert(viewController: self,
+                           withTitle: "Error",
+                           andMessage: "Could not connect to the internet\nCheck your connection")
+        }
     }
     
     @IBAction func loginGuestPressed(_ sender: Any) {
@@ -52,12 +72,14 @@ class LoginVC: UIViewController {
                     if let firstChild = tabChildren.first as? UINavigationController {
                         if let pasteVC = firstChild.topViewController as? PastesTVC {
                             pasteVC.userType = self.userType
+                            pasteVC.loggedInUser = self.loggedInUser
                         }
                     }
                     
                     if let lastChild = tabChildren.last as? UINavigationController {
                         if let profileVC = lastChild.topViewController as? ProfileTVC {
                             profileVC.userType = self.userType
+                            profileVC.user = self.loggedInUser
                         }
                     }
                 }

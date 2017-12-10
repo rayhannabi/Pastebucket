@@ -9,4 +9,5 @@ target 'PasteBucket' do
 
   # Pods for PasteBucket
   pod 'Alamofire', '~> 4.5'
+  pod "SwiftyXMLParser", :git => 'https://github.com/yahoojapan/SwiftyXMLParser.git'
 end
