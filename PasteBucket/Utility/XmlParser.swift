@@ -10,11 +10,18 @@ import UIKit
 import SwiftyXMLParser
 
 class XmlParserHelper {
+    private var pasteCollection : [Paste]
     private var user : User?
     private var xmlData: Data
     
     init(user: User, xmlString: String) {
         self.user = user
+        self.xmlData = xmlString.data(using: String.Encoding.utf8)!
+        self.pasteCollection = []
+    }
+    
+    init(xmlString: String) {
+        self.pasteCollection = []
         self.xmlData = xmlString.data(using: String.Encoding.utf8)!
     }
     
@@ -33,4 +40,42 @@ class XmlParserHelper {
         
         return self.user
     }
+    
+    func parseForPastes() -> [Paste] {
+        
+        let xml = XML.parse(xmlData)
+        
+        for item in xml["pastes"] {
+            for it in item["paste"] {
+                
+                let pasteItem = Paste()
+                pasteItem.key = it["paste_key"].text!
+                pasteItem.date = it["paste_date"].text!
+                pasteItem.title = it["paste_title"].text == nil ? "Untitled" : it["paste_title"].text!
+                pasteItem.size = it["paste_size"].text!
+                pasteItem.expireDate = it["paste_expire_date"].text!
+                pasteItem.scope = it["paste_private"].text!
+                pasteItem.formatShort = it["paste_format_short"].text!
+                pasteItem.formatLong = it["paste_format_long"].text!
+                pasteItem.url = it["paste_url"].text!
+                pasteItem.hits = it["paste_hits"].text!
+                
+                pasteCollection.append(pasteItem)
+            }
+        }
+        return pasteCollection
+    }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+

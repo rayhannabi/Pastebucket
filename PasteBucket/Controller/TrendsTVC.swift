@@ -9,50 +9,72 @@
 import UIKit
 
 class TrendsTVC: UITableViewController {
-
-    var demoData: [Int] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
     
-    var selectedData: String?
+    var pasteCollection: [Paste] = []
+    
+    var selectedPaste: Paste?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        prepareData()
+        prepareView()
+    }
+    
+    fileprivate func prepareNavigationBar() {
         self.navigationItem.titleView = TitleLabel.get()
         let editButton = self.editButtonItem
         editButton.tintColor = #colorLiteral(red: 0.9999960065, green: 1, blue: 1, alpha: 1)
         
         self.navigationItem.leftBarButtonItem = editButton
-        
+    }
+    
+    fileprivate func prepareRefresher() {
         let refreshController = UIRefreshControl(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height))
         refreshController.addTarget(self, action: #selector(refresh(_:)), for: .valueChanged)
         self.refreshControl = refreshController
+        
+        refreshControl?.beginRefreshing()
     }
-
+    
+    fileprivate func prepareView() {
+        prepareNavigationBar()
+        prepareRefresher()
+    }
+    
+    fileprivate func prepareData() {
+        
+        ApiWrapper.parsePastes(for: nil) { (allPastes) in
+            self.pasteCollection = allPastes
+            
+            self.tableView.separatorStyle = .singleLine
+            self.tableView.reloadData()
+            if let isrefreshing = self.refreshControl?.isRefreshing, isrefreshing {
+                self.refreshControl?.endRefreshing()
+            }
+        }
+    }
+    
     @objc func refresh(_ refreshControl: UIRefreshControl) {
-        self.refreshControl?.beginRefreshing()
-        
-        let refreshedData: [Int] = [11, 12, 13, 14, 15, 16]
-        
-        self.demoData = refreshedData
-        self.tableView.separatorStyle = .singleLine
-        self.tableView.reloadData()
-        self.refreshControl?.endRefreshing()
+        prepareData()
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
-
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return demoData.count
+        return pasteCollection.count
     }
-
+    
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "TrendingCell", for: indexPath)
         
-        cell.textLabel?.text = String(describing: demoData[indexPath.row])
-        cell.accessoryType = .disclosureIndicator
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "PasteCell", for: indexPath) as? PasteCell else {
+                return UITableViewCell()
+        }
+        
+        cell.configureView(with: pasteCollection[indexPath.row])
         
         return cell
     }
@@ -62,7 +84,8 @@ class TrendsTVC: UITableViewController {
             
             var activityItems: [Any] = []
             
-            activityItems.append(String(describing: self.demoData[index.row]))
+            activityItems.append(URL(string: self.pasteCollection[index.row].url)!)
+            activityItems.append(self.pasteCollection[index.row].url)
             
             let activityVC = UIActivityViewController(activityItems: activityItems, applicationActivities: nil)
             activityVC.popoverPresentationController?.sourceView = self.view
@@ -82,7 +105,7 @@ class TrendsTVC: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        selectedData = String(describing: demoData[indexPath.row])
+        selectedPaste = pasteCollection[indexPath.row]
         
         performSegue(withIdentifier: "ToReadPaste", sender: self)
     }
@@ -91,7 +114,7 @@ class TrendsTVC: UITableViewController {
         if segue.identifier == "ToReadPaste" {
             if let navController = segue.destination as? UINavigationController {
                 if let createVC = navController.topViewController as? CreatePasteVC {
-                    createVC.id = selectedData
+                    createVC.paste = selectedPaste
                     createVC.operation = PasteOperation.view
                 }
             }

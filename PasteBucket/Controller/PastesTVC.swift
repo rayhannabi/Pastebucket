@@ -14,16 +14,21 @@ class PastesTVC: UITableViewController {
     var userType: UserType?
     var loggedInUser: User?
     
-    var demoData: [Int] = [11, 12, 13]
-    var filteredData = [Int]()
+    var pasteCollection: [Paste] = []
+    var filteredData = [Paste]()
     
-    var selectedData: String?
+    var selectedData: Paste?
     var searchFooter: SearchFooterView?
+    var indicator: ActivityIndicatorView!
     
     let searchController = UISearchController(searchResultsController: nil)
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        indicator = ActivityIndicatorView(text: "Loading your Pastes")
+        view.addSubview(indicator)
+        indicator.hide()
         
         prepareUserData()
         prepareView()
@@ -32,7 +37,7 @@ class PastesTVC: UITableViewController {
     
     func prepareUserData() {
         if let usr = loggedInUser {
-            ApiWrapper.parseUser(loggedInUser: usr, completion: { (user) in
+            ApiWrapper.getUserDetails(for: usr, completion: { (user) in
                 self.loggedInUser = user
             })
         }
@@ -46,9 +51,11 @@ class PastesTVC: UITableViewController {
     
     func prepareForUser(_ type: UserType) {
         if type == .guestUser {
-            demoData = []
+            pasteCollection = []
             let etv = EmptyTableView(title: "Guest Mode", message: "Try adding some paste", for: self)
             etv.getEmptyView()
+        } else if type == .actualUser {
+            loadData()
         }
     }
     
@@ -103,21 +110,23 @@ class PastesTVC: UITableViewController {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if isFiltering() {
-            self.searchFooter?.setIsFiltering(filtered: filteredData.count, of: demoData.count)
+            self.searchFooter?.setIsFiltering(filtered: filteredData.count, of: pasteCollection.count)
             return filteredData.count
         }
         self.searchFooter?.setNotFiltering()
-        return demoData.count
+        return pasteCollection.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "PasteCell", for: indexPath)
-        
-        if isFiltering() {
-            cell.textLabel?.text = String(describing: filteredData[indexPath.row])
-        } else {
-            cell.textLabel?.text = String(describing: demoData[indexPath.row])
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "MyPasteCell", for: indexPath) as? PasteCell else {
+            return UITableViewCell()
         }
+        if isFiltering() {
+            cell.configureView(with: filteredData[indexPath.row])
+        } else {
+            cell.configureView(with: pasteCollection[indexPath.row])
+        }
+        
         return cell
     }
     
@@ -126,7 +135,7 @@ class PastesTVC: UITableViewController {
             
             var activityItems: [Any] = []
             
-            activityItems.append(String(describing: self.demoData[index.row]))
+            activityItems.append(String(describing: self.pasteCollection[index.row]))
             
             let activityVC = UIActivityViewController(activityItems: activityItems, applicationActivities: nil)
             activityVC.popoverPresentationController?.sourceView = self.view
@@ -143,10 +152,10 @@ class PastesTVC: UITableViewController {
         shareAction.backgroundColor = #colorLiteral(red: 0.2392156869, green: 0.6745098233, blue: 0.9686274529, alpha: 1)
         
         let deleteAction = UITableViewRowAction(style: .destructive, title: "Delete") { (action, index) in
-            self.demoData.remove(at: index.row)
+            self.pasteCollection.remove(at: index.row)
             tableView.deleteRows(at: [index], with: .fade)
             
-            if self.demoData.count == 0 {
+            if self.pasteCollection.count == 0 {
                 let etv = EmptyTableView(title: "No Paste found", message: "Try creating one or pull down to refresh", for: self)
                 etv.getEmptyView()
             }
@@ -158,36 +167,45 @@ class PastesTVC: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        operation = PasteOperation.edit
+        operation = PasteOperation.view
         
         if isFiltering() {
-            selectedData = String(describing: filteredData[indexPath.row])
+            selectedData = filteredData[indexPath.row]
             searchController.dismiss(animated: true, completion: {
                 self.performSegue(withIdentifier: "ToCreatePaste", sender: self)
             })
         } else {
-            selectedData = String(describing: demoData[indexPath.row])
+            selectedData = pasteCollection[indexPath.row]
             self.performSegue(withIdentifier: "ToCreatePaste", sender: self)
+        }
+    }
+    
+    fileprivate func loadData() {
+        indicator.show()
+        
+        ApiWrapper.parsePastes(for: loggedInUser) { (allPastes) in
+            
+            if allPastes.count > 0 {
+                self.pasteCollection = allPastes
+                
+                self.tableView.separatorStyle = .singleLine
+                self.tableView.reloadData()
+                if let isrefreshing = self.refreshControl?.isRefreshing, isrefreshing {
+                    self.refreshControl?.endRefreshing()
+                }
+                self.indicator.hide()
+            } else {
+                let etv = EmptyTableView(title: "No Paste Found", message: "Try adding some paste", for: self)
+                etv.getEmptyView()
+            }
         }
     }
     
     @objc func handleRefresh(_ refreshControl: UIRefreshControl) {
         if let ut = userType, ut == .actualUser {
-            let refreshedData: [Int] = [11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25]
-        
-            self.demoData = refreshedData
-            self.tableView.separatorStyle = .singleLine
-            self.tableView.reloadData()
-            self.refreshControl?.endRefreshing()
-            
-        } else if let ut = userType, ut == .guestUser {
-            let refreshedData: [Int] = []
-            
-            self.demoData = refreshedData
-            self.tableView.separatorStyle = .singleLine
-            self.tableView.reloadData()
-            self.refreshControl?.endRefreshing()
+            loadData()
         }
+        self.view.reloadInputViews()
     }
     
     @IBAction func createPastePressed(_ sender: Any) {
@@ -199,8 +217,13 @@ class PastesTVC: UITableViewController {
         if segue.identifier == "ToCreatePaste" {
             if let navController = segue.destination as? UINavigationController {
                 if let createVC = navController.topViewController as? CreatePasteVC {
-                    createVC.id = selectedData
+                    createVC.paste = selectedData
                     createVC.operation = operation
+                    if let loggedInUser = self.loggedInUser {
+                        createVC.userKey = loggedInUser.userId
+                    } else {
+                        createVC.userKey = nil
+                    }
                 }
             }
         }
@@ -219,11 +242,13 @@ extension PastesTVC: UISearchResultsUpdating {
     }
     
     func filterContent(_ searchText: String, scope: String = "All") {
-        filteredData = demoData.filter({ (data) -> Bool in
-            return String(describing: data).lowercased().contains(searchText.lowercased())
+        filteredData = pasteCollection.filter({ (data) -> Bool in
+            return data.title.lowercased().contains(searchText.lowercased())
         })
         
-        print(filteredData)
+        for item in filteredData {
+            print(item.title, item.key)
+        }
         
         tableView.reloadData()
     }

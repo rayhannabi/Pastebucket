@@ -9,9 +9,12 @@
 import UIKit
 
 class CreatePasteVC: UIViewController {
-
-    public var id: String?
+    
+    public var userKey: String?
+    public var paste: Paste?
     public var operation: PasteOperation?
+    
+    var indicator: ActivityIndicatorView!
     
     @IBOutlet weak var syntaxItem: UIBarButtonItem!
     @IBOutlet weak var actionButton: UIBarButtonItem!
@@ -26,35 +29,69 @@ class CreatePasteVC: UIViewController {
         
         syntaxItem.isEnabled = false
         syntaxItem.title = "None"
-        
-        if id != nil {
-            self.navigationItem.title = id!
-        } else {
-            self.navigationItem.title = "Some Paste"
-        }
+        indicator = ActivityIndicatorView(text: "Loading Paste")
+        self.view.addSubview(indicator)
+        self.indicator.hide()
         
         if let operation = operation {
             switch operation {
             case .view:
-                if let id = id {
-                    self.navigationItem.title = id
-                }
-                nextButton.title = "Author Name"
-                nextButton.isEnabled = false
-                chooseSyntaxButton.isEnabled = false
-                codeView.isEditable = false
+                setUpViewMode()
             case .create:
-                self.navigationItem.title = "New Paste"
+                setupCreateMode()
             case .edit:
-                if let id = id {
-                    self.navigationItem.title = id
-                }
+                setupEditMode()
             }
         }
     }
     
+    fileprivate func loadPaste(_ key: String) {
+        indicator.show()
+        ApiWrapper.getRawPaste(key: key) { (raw) in
+            self.codeView.text = raw
+            self.indicator.hide()
+        }
+    }
+    
+    fileprivate func setupCreateMode() {
+        navigationItem.title = "New Paste"
+        actionButton.isEnabled = false
+    }
+    
+    fileprivate func setupEditMode() {
+        if let paste = paste {
+            self.navigationItem.title = paste.title
+            loadPaste(paste.key)
+            self.chooseSyntaxButton.isEnabled = false
+            self.syntaxItem.title = paste.formatLong
+        }
+    }
+    
+    fileprivate func setUpViewMode() {
+        if let paste = paste {
+            self.navigationItem.title = paste.title
+            self.syntaxItem.title = paste.formatLong
+            let date = Date(timeIntervalSince1970: Double(paste.date)!)
+            let dateFormat = DateFormatter()
+            dateFormat.dateFormat = "yyyy-MMM-dd"
+            
+            nextButton.title = dateFormat.string(from: date)
+        }
+        
+        nextButton.isEnabled = false
+        chooseSyntaxButton.isEnabled = false
+        codeView.isEditable = false
+        
+        loadPaste(paste!.key)
+    }
+    
     @IBAction func nextPressed(_ sender: Any) {
-        performSegue(withIdentifier: "ToOptions", sender: self)
+        if !codeView.text.isEmpty {
+            let paste = Paste()
+            paste.code = codeView.text
+            self.paste = paste
+            performSegue(withIdentifier: "ToOptions", sender: self)
+        }
     }
     
     @IBAction func cancelPressed(_ sender: Any) {
@@ -64,7 +101,7 @@ class CreatePasteVC: UIViewController {
     @IBAction func ActionPressed(_ sender: Any) {
         var activityItems: [Any] = []
         
-        activityItems.append("Test")
+        activityItems.append(URL(string: paste!.url)!)
         
         let activityVC = UIActivityViewController(activityItems: activityItems, applicationActivities: nil)
         activityVC.popoverPresentationController?.sourceView = self.view
@@ -93,6 +130,8 @@ class CreatePasteVC: UIViewController {
         if segue.identifier == "ToOptions" {
             if let optionsVC = segue.destination as? PasteOptionsTVC {
                 optionsVC.operation = self.operation
+                optionsVC.paste = paste
+                optionsVC.userKey = userKey
             }
         }
     }

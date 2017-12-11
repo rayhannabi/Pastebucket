@@ -9,8 +9,10 @@
 import UIKit
 
 class PasteOptionsTVC: UITableViewController, UIPickerViewDelegate, UIPickerViewDataSource {
-
+    
     var operation: PasteOperation?
+    var paste: Paste?
+    var userKey: String?
     
     @IBOutlet weak var titleField: UITextField!
     @IBOutlet weak var expireField: UITextField!
@@ -38,6 +40,17 @@ class PasteOptionsTVC: UITableViewController, UIPickerViewDelegate, UIPickerView
         }
         
         return e.sorted()
+    }
+    
+    fileprivate func setupForCreate() {
+        self.pasteActionButton.setTitle("CREATE NEW PASTE", for: .normal)
+    }
+    
+    fileprivate func setupForEdit() {
+        self.pasteActionButton.setTitle("SAVE CHANGES", for: .normal)
+        self.pasteActionButton.setTitleColor(#colorLiteral(red: 0, green: 0.5603182912, blue: 0, alpha: 1), for: .normal)
+        
+        titleField.text = paste!.title
     }
     
     override func viewDidLoad() {
@@ -77,12 +90,15 @@ class PasteOptionsTVC: UITableViewController, UIPickerViewDelegate, UIPickerView
         
         if let operation = operation {
             if operation == .create {
-                self.pasteActionButton.setTitle("CREATE NEW PASTE", for: .normal)
+                setupForCreate()
             } else if operation == .edit {
-                self.pasteActionButton.setTitle("SAVE CHANGES", for: .normal)
-                self.pasteActionButton.setTitleColor(#colorLiteral(red: 0, green: 0.5603182912, blue: 0, alpha: 1), for: .normal)
+                setupForEdit()
             }
         }
+        
+        titleField.text = "Untitled"
+        expireField.text = "Never"
+        exposureField.text = "Public"
     }
     
     @objc func donePressed(sender: UIBarButtonItem) {
@@ -128,7 +144,24 @@ class PasteOptionsTVC: UITableViewController, UIPickerViewDelegate, UIPickerView
     }
     
     @IBAction func createPastePressed(_ sender: Any) {
-        // TODO
+        
+        if let paste = self.paste {
+            paste.title = titleField.text == nil ? "" : titleField.text!
+            paste.expireDate = PasteOptions.pasteExpires[expireField.text!]!
+            paste.scope = PasteOptions.pasteExposure[exposureField.text!]!
+            
+            ApiWrapper.createPaste(forKey: userKey, paste: paste, completion: { (data) in
+                let alert = UIAlertController(title: "Success", message: data + "\n link copied to clipboard", preferredStyle: .alert)
+                let action = UIAlertAction(title: "done", style: .cancel, handler: { (actiondata) in
+                    UIPasteboard.general.string = data
+                    alert.dismiss(animated: true, completion: nil)
+                })
+                
+                alert.addAction(action)
+                self.present(alert, animated: true, completion: nil)
+            }
+            )
+        }
         
         dismiss(animated: true, completion: nil)
     }

@@ -36,13 +36,13 @@ class ApiWrapper {
             })
     }
     
-    class func parseUser(loggedInUser: User?, completion: @escaping (User?) -> ()) {
+    class func getUserDetails(for loggedInUser: User?, completion: @escaping (User?) -> ()) {
         
         if let user = loggedInUser {
             Alamofire.request(URL(string: Api.apiPost)!, method: .post, parameters: [
                 Api.kDevKey: Api.apiKey,
                 Api.kUserKey: user.userId,
-                Api.kOption: Api.pUserDetail
+                Api.kOption: Api.vUserDetail
                 ]
                 ).validate().responseString(completionHandler: { (response) in
                     if let responseValue = response.value {
@@ -56,6 +56,76 @@ class ApiWrapper {
                 })
         }
     }
+    
+    class func parsePastes(for user: User?, completion: @escaping ([Paste]) -> ()) {
+        if user != nil {
+            Alamofire.request(URL(string: Api.apiPost)!, method: .post, parameters: [
+                Api.kDevKey: Api.apiKey,
+                Api.kUserKey: user!.userId,
+                Api.kOption: Api.vList
+                ]
+                ).validate().responseString(completionHandler: { (response) in
+                    if let responseValue = response.value {
+                        // TODO: Parse xml here
+                        let properResponseValue = "<pastes>\n" + responseValue + "</pastes>\n"
+                        
+                        let parser = XmlParserHelper(xmlString: properResponseValue)
+                        let pasteCollection = parser.parseForPastes()
+                        completion(pasteCollection)
+                    }
+                })
+        } else {
+            Alamofire.request(URL(string: Api.apiPost)!, method: .post, parameters: [
+                Api.kDevKey: Api.apiKey,
+                Api.kOption: Api.vTrends
+                ]
+                ).validate().responseString(completionHandler: { (response) in
+                    if let responseValue = response.value {
+                        // TODO: Parse xml here
+                        let properResponseValue = "<pastes>\n" + responseValue + "</pastes>\n"
+                        
+                        let parser = XmlParserHelper(xmlString: properResponseValue)
+                        let pasteCollection = parser.parseForPastes()
+                        completion(pasteCollection)
+                    }
+                })
+        }
+    }
+    
+    class func getRawPaste(key: String, completion: @escaping (String) -> ()) {
+        var pasteUrl = Api.apiRaw
+        pasteUrl.append(key)
+        let url = URL(string: pasteUrl)!
+        
+        Alamofire.request(url, method: .get).validate().responseString { (raw) in
+            if let rawPaste = raw.value {
+                completion(rawPaste)
+            }
+        }
+    }
+    
+    class func createPaste(forKey userKey: String?, paste: Paste, completion: @escaping (String) -> ()) {
+        var keydata = ""
+        if userKey != nil {
+            keydata = userKey!
+        }
+        
+        Alamofire.request(URL(string: Api.apiPost)!, method: .post, parameters: [
+            Api.kDevKey: Api.apiKey,
+            Api.kOption: Api.vPaste,
+            Api.kPasteCode: paste.code,
+            Api.kUserKey: keydata,
+            Api.kPasteName: paste.title,
+            Api.kExpire: paste.expireDate,
+            Api.kPrivate: paste.scope
+            ]
+            ).validate().responseString { (response) in
+                if let value = response.value {
+                    completion(value)
+                }
+        }
+    }
+    
 }
 
 
