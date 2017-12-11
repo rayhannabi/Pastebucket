@@ -151,14 +151,7 @@ class PasteOptionsTVC: UITableViewController, UIPickerViewDelegate, UIPickerView
             paste.scope = PasteOptions.pasteExposure[exposureField.text!]!
             
             ApiWrapper.createPaste(forKey: userKey, paste: paste, completion: { (data) in
-                let alert = UIAlertController(title: "Success", message: data + "\n link copied to clipboard", preferredStyle: .alert)
-                let action = UIAlertAction(title: "done", style: .cancel, handler: { (actiondata) in
-                    UIPasteboard.general.string = data
-                    alert.dismiss(animated: true, completion: nil)
-                })
-                
-                alert.addAction(action)
-                self.present(alert, animated: true, completion: nil)
+                UIPasteboard.general.string = data
             }
             )
         }
